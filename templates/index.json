@@ -1,34 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero-slider": {
-      "type": "hero-slider"
+      "type": "hero-slider",
+      "blocks": {
+        "slide_DQYzbp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/photo-1634849662801-a00d83441092.jpg",
+            "heading": "Modern Mountain Living",
+            "subtitle": "Home decor & lifestyle goods for your mountain retreat",
+            "button_text": "Shop Now",
+            "button_link": "#"
+          }
+        },
+        "slide_7A7AEW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/photo-1463693396721-8ca0cfa2b3b5.jpg",
+            "heading": "Modern Mountain Living",
+            "subtitle": "Home decor & lifestyle goods for your mountain retreat",
+            "button_text": "Shop Now",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "slide_DQYzbp",
+        "slide_7A7AEW"
+      ],
+      "settings": {
+        "auto_play_delay": 5,
+        "show_dots": true,
+        "show_arrows": true
+      }
     },
     "feature-icons": {
-      "type": "feature-icons"
+      "type": "feature-icons",
+      "blocks": {
+        "feature_BPqH6f": {
+          "type": "feature",
+          "settings": {
+            "title": "Free Shipping",
+            "description": "On orders over $75",
+            "icon": "shield"
+          }
+        },
+        "feature_bpRhBF": {
+          "type": "feature",
+          "settings": {
+            "title": "Free Shipping",
+            "description": "On orders over $75",
+            "icon": "truck"
+          }
+        },
+        "feature_FbjD3V": {
+          "type": "feature",
+          "settings": {
+            "title": "Free Shipping",
+            "description": "On orders over $75",
+            "icon": "return"
+          }
+        },
+        "feature_m7tHkQ": {
+          "type": "feature",
+          "settings": {
+            "title": "Free Shipping",
+            "description": "On orders over $75",
+            "icon": "headset"
+          }
+        }
+      },
+      "block_order": [
+        "feature_BPqH6f",
+        "feature_bpRhBF",
+        "feature_FbjD3V",
+        "feature_m7tHkQ"
+      ],
+      "settings": {}
     },
     "featured-products": {
-      "type": "featured-products"
+      "type": "featured-products",
+      "settings": {
+        "small_label": "Shop Our Collection",
+        "heading": "Featured Products",
+        "description": "Discover our handpicked selection of apparel and lifestyle goods, inspired by the backroads of California.",
+        "collection": "frontpage",
+        "products_to_show": 8
+      }
     },
     "shop-by-category": {
-      "type": "shop-by-category"
+      "type": "shop-by-category",
+      "blocks": {
+        "category_mcnMNd": {
+          "type": "category",
+          "settings": {
+            "title": "Apparel",
+            "description": "Everyday apparel for mountain life",
+            "image": "shopify://shop_images/photo-1598186004076-e062b6555c53.jpg",
+            "link": "",
+            "large_card": true
+          }
+        },
+        "category_EVyfRU": {
+          "type": "category",
+          "settings": {
+            "title": "Apparel",
+            "description": "Everyday apparel for mountain life",
+            "image": "shopify://shop_images/2_86abb7da-741c-4a84-bf2a-cdd45272b4a3.jpg",
+            "link": "",
+            "large_card": false
+          }
+        },
+        "category_8xkdLB": {
+          "type": "category",
+          "settings": {
+            "title": "Apparel",
+            "description": "Everyday apparel for mountain life",
+            "image": "shopify://shop_images/3_8931bde3-6089-43a1-9578-7c019e7e7312.jpg",
+            "link": "",
+            "large_card": false
+          }
+        },
+        "category_kPqNxx": {
+          "type": "category",
+          "settings": {
+            "title": "Apparel",
+            "description": "Everyday apparel for mountain life",
+            "image": "shopify://shop_images/1.jpg",
+            "link": "",
+            "large_card": false
+          }
+        }
+      },
+      "block_order": [
+        "category_mcnMNd",
+        "category_EVyfRU",
+        "category_8xkdLB",
+        "category_kPqNxx"
+      ],
+      "settings": {
+        "label": "Explore",
+        "heading": "Shop by Category",
+        "description": "From cozy apparel to modern home decor, find everything you need for mountain living."
+      }
     },
     "feature-showcase": {
-      "type": "feature-showcase"
+      "type": "feature-showcase",
+      "blocks": {
+        "feature_39nqeP": {
+          "type": "feature",
+          "settings": {
+            "layout": "left",
+            "label": "Discover 89 Classics",
+            "heading": "It's Hoodie Season",
+            "description": "This Product is a Staple of the California 89 Brand. Been on the floor since day 1 in 2012, this product continues to be one of our best sellers.",
+            "main_image": "shopify://shop_images/3_8931bde3-6089-43a1-9578-7c019e7e7312.jpg",
+            "thumbnail_image": "shopify://shop_images/photo-1598300042247-d088f8ab3a91.jpg",
+            "badge_text": "Best Seller",
+            "price": "$60.00",
+            "show_sizes": true,
+            "button_text": "Shop Hoodies",
+            "button_link": "",
+            "button_style": "primary",
+            "list_item_1": "",
+            "list_item_2": "",
+            "list_item_3": "",
+            "list_item_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_39nqeP"
+      ],
+      "settings": {}
     },
     "home-showcase": {
-      "type": "home-showcase"
+      "type": "home-showcase",
+      "settings": {
+        "label": "CA89 Home",
+        "heading": "Modern Mountain Living",
+        "description": "Thoughtfully curated home decor and lifestyle goods for your mountain retreat. Furniture, art, and accessories inspired by Sierra living.",
+        "button_text": "Explore CA89 Home",
+        "button_link": "",
+        "category_collection_1": "",
+        "category_title_1": "Furniture",
+        "category_link_1": "",
+        "category_collection_2": "",
+        "category_title_2": "Art & Wall Decor",
+        "category_link_2": "",
+        "category_collection_3": "",
+        "category_title_3": "Vases & Bowls",
+        "category_link_3": "",
+        "products_collection": "",
+        "products_to_show": 4
+      }
     },
     "homepage-about": {
-      "type": "homepage-about"
+      "type": "homepage-about",
+      "settings": {
+        "label": "Our Story",
+        "heading": "<p>Family Business,<br>Mountain Roots</p>",
+        "paragraph_1": "California 89 started in 2012 in the heart of downtown Truckee. What began as a small apparel shop has grown into three beloved locations, combining apparel and home decor that captures the spirit of mountain living.",
+        "paragraph_2": "So much more than a Sierra Highway, it's a way of life! We're a family-owned business dedicated to bringing you quality products inspired by the backroads of California.",
+        "link_text": "Learn More About Us",
+        "link_url": "",
+        "stores_heading": "Visit Our Stores"
+      }
     },
     "customer-testimonials": {
-      "type": "customer-testimonials"
+      "type": "customer-testimonials",
+      "settings": {
+        "label": "Testimonials",
+        "heading": "What Our Customers Say",
+        "description": "Join thousands of happy customers who love the California 89 lifestyle.",
+        "stat_1_value": "12.4K",
+        "stat_1_label": "Happy Customers",
+        "stat_2_value": "4.9",
+        "stat_2_label": "Average Rating",
+        "stat_3_value": "13+",
+        "stat_3_label": "Years in Business",
+        "stat_4_value": "3",
+        "stat_4_label": "Store Locations"
+      }
     },
     "blog-posts": {
-      "type": "blog-posts"
+      "type": "blog-posts",
+      "settings": {
+        "label": "Get Inspired",
+        "heading": "CA89 Blog",
+        "blog": "",
+        "posts_to_show": 3,
+        "view_all_link": ""
+      }
     },
     "instagram-feed": {
-      "type": "instagram-feed"
+      "type": "instagram-feed",
+      "settings": {
+        "instagram_handle": "@cahwy89",
+        "heading": "Follow Us on Instagram",
+        "description": "Join our community of over 12K followers and share your California 89 moments with us.",
+        "instagram_url": ""
+      }
     }
   },
   "order": [
