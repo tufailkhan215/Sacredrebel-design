@@ -850,7 +850,7 @@
 .blog-posts-container {
   max-width: 1280px; /* max-w-7xl */
   margin: 0 auto;
-  padding: 0 1.6rem; /* px-4 */
+  padding: 0 1.6rem; /* px-4 sm:px-6 lg:px-8 */
 }
 
 .blog-posts-header {
@@ -906,6 +906,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* grid-cols-1 */
   gap: 1.5rem; /* gap-6 = 24px */
+  grid-auto-flow: row; /* Ensure proper row flow */
 }
 
 .blog-post-card {
@@ -996,7 +997,7 @@
 }
 
 .blog-post-excerpt {
-  color: #78716c; /* stone-600 */
+  color: #57534e; /* stone-600 - exact match */
   line-height: 1.75; /* leading-relaxed */
   display: -webkit-box;
   -webkit-line-clamp: 2;
