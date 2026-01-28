@@ -1,0 +1,54 @@
+{% schema %}
+{
+  "name": "About CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ready to Experience the 89 Lifestyle?"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Browse our collection of apparel and home decor, inspired by the backroads of California."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About CTA"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="about-cta">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="about-cta-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    {%- if section.settings.description != blank -%}
+      <p class="about-cta-description">{{ section.settings.description }}</p>
+    {%- endif -%}
+    
+    {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+      <a href="{{ section.settings.button_link }}" class="btn btn-primary about-cta-button">
+        {{ section.settings.button_text }} →
+      </a>
+    {%- endif -%}
+  </div>
+</div>

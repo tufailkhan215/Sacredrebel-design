@@ -1,0 +1,160 @@
+{% schema %}
+{
+  "name": "About Stores",
+  "settings": [
+    {
+      "type": "text",
+      "id": "small_heading",
+      "label": "Small Heading",
+      "default": "VISIT US"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Our Stores"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Stop by one of our three locations in Truckee and Tahoe City."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store",
+      "name": "Store",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Store Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Store Name",
+          "default": "California 89 - Truckee"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address",
+          "default": "12345 Highway 89\nTruckee, CA 96161"
+        },
+        {
+          "type": "text",
+          "id": "hours",
+          "label": "Hours",
+          "default": "Daily 10am - 6pm"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Phone Number",
+          "default": "(530) 123-4567"
+        },
+        {
+          "type": "url",
+          "id": "directions_link",
+          "label": "Directions Link",
+          "info": "Link to Google Maps or directions"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Stores",
+      "blocks": [
+        {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Truckee",
+            "address": "12345 Highway 89\nTruckee, CA 96161",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 123-4567"
+          }
+        },
+        {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Tahoe City",
+            "address": "67890 North Lake Blvd\nTahoe City, CA 96145",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 987-6543"
+          }
+        },
+        {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Kings Beach",
+            "address": "11111 Highway 28\nKings Beach, CA 96143",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 555-1234"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="about-stores">
+  <div class="container">
+    {%- if section.settings.small_heading != blank -%}
+      <p class="about-stores-small-heading">{{ section.settings.small_heading }}</p>
+    {%- endif -%}
+    
+    {%- if section.settings.heading != blank -%}
+      <h2 class="about-stores-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    {%- if section.settings.subtitle != blank -%}
+      <p class="about-stores-subtitle">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+    
+    <div class="about-stores-grid">
+      {%- for block in section.blocks -%}
+        <div class="about-store-card" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <div class="about-store-image">
+              <img 
+                src="{{ block.settings.image | image_url: width: 600 }}"
+                alt="{{ block.settings.name | escape }}"
+                loading="lazy"
+              >
+            </div>
+          {%- endif -%}
+          
+          <div class="about-store-content">
+            {%- if block.settings.name != blank -%}
+              <h3 class="about-store-name">{{ block.settings.name }}</h3>
+            {%- endif -%}
+            
+            {%- if block.settings.address != blank -%}
+              <p class="about-store-address">{{ block.settings.address | newline_to_br }}</p>
+            {%- endif -%}
+            
+            {%- if block.settings.hours != blank -%}
+              <p class="about-store-hours">{{ block.settings.hours }}</p>
+            {%- endif -%}
+            
+            {%- if block.settings.phone != blank -%}
+              <p class="about-store-phone">
+                <a href="tel:{{ block.settings.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}">{{ block.settings.phone }}</a>
+              </p>
+            {%- endif -%}
+            
+            {%- if block.settings.directions_link != blank -%}
+              <a href="{{ block.settings.directions_link }}" class="about-store-directions" target="_blank" rel="noopener">
+                Get Directions →
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

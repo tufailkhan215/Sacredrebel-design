@@ -1,0 +1,122 @@
+{% schema %}
+{
+  "name": "About Values",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What We Stand For"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon Name",
+          "default": "mountain",
+          "info": "Options: mountain, heart, person, leaf"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Mountain Living"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Inspired by the Sierra Nevada lifestyle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Values",
+      "blocks": [
+        {
+          "type": "value",
+          "settings": {
+            "icon": "mountain",
+            "title": "Mountain Living",
+            "description": "Inspired by the Sierra Nevada lifestyle"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "heart",
+            "title": "Family First",
+            "description": "Built on family values and community"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "person",
+            "title": "Authentic",
+            "description": "Genuine products for real mountain life"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "icon": "leaf",
+            "title": "Sustainable",
+            "description": "Committed to quality and sustainability"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="about-values">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="about-values-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    <div class="about-values-grid">
+      {%- for block in section.blocks -%}
+        <div class="about-value-card" {{ block.shopify_attributes }}>
+          <div class="about-value-icon">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {%- case block.settings.icon -%}
+                {%- when 'mountain' -%}
+                  <path d="M30 10L15 40H45L30 10Z" stroke="#d97706" stroke-width="2" fill="none"/>
+                  <path d="M20 40L10 50H50L40 40" stroke="#d97706" stroke-width="2" fill="none"/>
+                {%- when 'heart' -%}
+                  <path d="M30 20C25 15 15 15 15 25C15 30 20 35 30 45C40 35 45 30 45 25C45 15 35 15 30 20Z" stroke="#d97706" stroke-width="2" fill="none"/>
+                {%- when 'person' -%}
+                  <circle cx="30" cy="20" r="8" stroke="#d97706" stroke-width="2" fill="none"/>
+                  <path d="M15 45C15 35 22 30 30 30C38 30 45 35 45 45" stroke="#d97706" stroke-width="2" fill="none"/>
+                {%- when 'leaf' -%}
+                  <path d="M20 30C20 20 25 15 30 15C35 15 40 20 40 30C40 40 35 45 30 45C25 45 20 40 20 30Z" stroke="#d97706" stroke-width="2" fill="none"/>
+                  <path d="M30 15V10" stroke="#d97706" stroke-width="2"/>
+                  <path d="M30 15L25 20" stroke="#d97706" stroke-width="2"/>
+                {%- else -%}
+                  <circle cx="30" cy="30" r="20" stroke="#d97706" stroke-width="2" fill="none"/>
+              {%- endcase -%}
+            </svg>
+          </div>
+          
+          {%- if block.settings.title != blank -%}
+            <h3 class="about-value-title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          
+          {%- if block.settings.description != blank -%}
+            <p class="about-value-description">{{ block.settings.description }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

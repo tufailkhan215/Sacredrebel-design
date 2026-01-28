@@ -47,6 +47,74 @@
   .feature-icons {
     grid-template-columns: 1fr;
   }
+
+  /* About Page Responsive */
+  .about-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .about-hero-title {
+    font-size: 3.6rem;
+  }
+
+  .about-hero-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .about-hero-content {
+    left: 5%;
+    right: 5%;
+    max-width: 100%;
+  }
+
+  .about-story {
+    padding: 4rem 0;
+  }
+
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-story-heading {
+    font-size: 3.2rem;
+  }
+
+  .about-values {
+    padding: 4rem 0;
+  }
+
+  .about-values-heading {
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-stores {
+    padding: 4rem 0;
+  }
+
+  .about-stores-heading {
+    font-size: 3.2rem;
+  }
+
+  .about-stores-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-cta {
+    padding: 4rem 0;
+  }
+
+  .about-cta-heading {
+    font-size: 3.2rem;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -60,6 +128,19 @@
   }
 
   .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About Page Responsive - Tablet */
+  .about-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-stores-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
