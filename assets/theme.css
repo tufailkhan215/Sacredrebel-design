@@ -137,11 +137,18 @@ a:hover {
 /* Header Container */
 .header-container {
   z-index: 1000;
+  width: 100%;
+  background-color: var(--color-white);
 }
 
 .header-container.header-sticky {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
+  will-change: transform;
+  align-self: start;
 }
 
 /* Top Promotional Bar */
@@ -158,6 +165,8 @@ a:hover {
   background-color: var(--color-white);
   border-bottom: 1px solid rgba(42, 42, 42, 0.1);
   transition: var(--transition);
+  position: relative;
+  width: 100%;
 }
 
 .header.scrolled {
