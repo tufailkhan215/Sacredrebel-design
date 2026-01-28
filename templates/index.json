@@ -209,18 +209,90 @@
     },
     "homepage-about": {
       "type": "homepage-about",
+      "blocks": {
+        "store_WkRzzB": {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Truckee",
+            "address": "10052 Donner Pass Rd, Truckee, CA 96161",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 587-8989"
+          }
+        },
+        "store_HxBMrR": {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Truckee",
+            "address": "10052 Donner Pass Rd, Truckee, CA 96161",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 587-8989"
+          }
+        }
+      },
+      "block_order": [
+        "store_WkRzzB",
+        "store_HxBMrR"
+      ],
       "settings": {
         "label": "Our Story",
-        "heading": "<p>Family Business,<br>Mountain Roots</p>",
+        "heading": "<p>Family Business,<br/>Mountain Roots</p>",
         "paragraph_1": "California 89 started in 2012 in the heart of downtown Truckee. What began as a small apparel shop has grown into three beloved locations, combining apparel and home decor that captures the spirit of mountain living.",
         "paragraph_2": "So much more than a Sierra Highway, it's a way of life! We're a family-owned business dedicated to bringing you quality products inspired by the backroads of California.",
         "link_text": "Learn More About Us",
-        "link_url": "",
+        "link_url": "#",
         "stores_heading": "Visit Our Stores"
       }
     },
     "customer-testimonials": {
       "type": "customer-testimonials",
+      "blocks": {
+        "testimonial_bRYK4T": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Great products and excellent service!",
+            "author": "John Doe",
+            "product_name": "Mountain Hoodie",
+            "verified": true
+          }
+        },
+        "testimonial_6LmjVV": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Great products and excellent service!",
+            "author": "John Doe",
+            "product_name": "Mountain Hoodie",
+            "verified": true
+          }
+        },
+        "testimonial_fBgCbw": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Great products and excellent service!",
+            "author": "John Doe",
+            "product_name": "Mountain Hoodie",
+            "verified": true
+          }
+        },
+        "testimonial_qEXbWE": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Great products and excellent service!",
+            "author": "John Doe",
+            "product_name": "Mountain Hoodie",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_bRYK4T",
+        "testimonial_6LmjVV",
+        "testimonial_fBgCbw",
+        "testimonial_qEXbWE"
+      ],
       "settings": {
         "label": "Testimonials",
         "heading": "What Our Customers Say",
@@ -240,13 +312,71 @@
       "settings": {
         "label": "Get Inspired",
         "heading": "CA89 Blog",
-        "blog": "",
+        "blog": "news",
         "posts_to_show": 3,
         "view_all_link": ""
       }
     },
     "instagram-feed": {
       "type": "instagram-feed",
+      "blocks": {
+        "image_WMgbEA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/50.jpg",
+            "link": "",
+            "like_count": "245"
+          }
+        },
+        "image_M7TnmT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/58.jpg",
+            "link": "",
+            "like_count": "245"
+          }
+        },
+        "image_hqbXc8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/88.jpg",
+            "link": "",
+            "like_count": "245"
+          }
+        },
+        "image_VVBi4Y": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/87.jpg",
+            "link": "",
+            "like_count": "245"
+          }
+        },
+        "image_qKgntq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/86.jpg",
+            "link": "",
+            "like_count": "245"
+          }
+        },
+        "image_8PKntV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/47.jpg",
+            "link": "",
+            "like_count": "245"
+          }
+        }
+      },
+      "block_order": [
+        "image_WMgbEA",
+        "image_M7TnmT",
+        "image_hqbXc8",
+        "image_VVBi4Y",
+        "image_qKgntq",
+        "image_8PKntV"
+      ],
       "settings": {
         "instagram_handle": "@cahwy89",
         "heading": "Follow Us on Instagram",
