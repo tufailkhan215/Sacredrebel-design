@@ -1,9 +1,19 @@
 {% comment %}
   About Page Template
+  Sections can be added, removed, and reordered in the theme editor
 {% endcomment %}
 
-{% section 'about-hero' %}
-{% section 'about-story' %}
-{% section 'about-values' %}
-{% section 'about-stores' %}
-{% section 'about-cta' %}
+{%- if page.content != blank -%}
+  <div class="page-content">
+    <div class="page-content-container">
+      {%- if page.title != blank -%}
+        <h1 class="page-title">{{ page.title }}</h1>
+      {%- endif -%}
+      <div class="page-body">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% sections %}

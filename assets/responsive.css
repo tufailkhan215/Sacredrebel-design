@@ -483,6 +483,14 @@
   .footer-content-grid {
     grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
   }
+
+  .page-content-container {
+    padding: 0 2.4rem; /* sm:px-6 */
+  }
+
+  .page-title {
+    font-size: 4.8rem;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
