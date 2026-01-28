@@ -252,8 +252,20 @@
     padding: 0 2.4rem; /* sm:px-6 */
   }
 
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .customer-testimonials-grid {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+  }
+
+  .customer-testimonials-heading {
+    font-size: 4.4rem; /* md:text-5xl */
+  }
+
+  .customer-testimonials-container {
+    padding: 0 2.4rem; /* sm:px-6 */
+  }
+
+  .customer-testimonials-stats {
+    grid-template-columns: repeat(2, 1fr); /* grid-cols-2 */
   }
 
   /* About Page Responsive - Tablet */
@@ -355,6 +367,18 @@
 
   .home-showcase-products {
     grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
+  }
+
+  .customer-testimonials-grid {
+    grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
+  }
+
+  .customer-testimonials-container {
+    padding: 0 3.2rem; /* lg:px-8 */
+  }
+
+  .customer-testimonials-stats {
+    grid-template-columns: repeat(4, 1fr); /* md:grid-cols-4 */
   }
 }
 
