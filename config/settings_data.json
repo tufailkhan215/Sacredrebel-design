@@ -140,23 +140,13 @@
               "link": "",
               "large_card": false
             }
-          },
-          "category_WHJA7V": {
-            "type": "category",
-            "settings": {
-              "title": "Apparel",
-              "description": "Everyday apparel for mountain life",
-              "link": "",
-              "large_card": false
-            }
           }
         },
         "block_order": [
           "category_wMrfjX",
           "category_qr49WV",
           "category_fYiyqy",
-          "category_g9Hi8j",
-          "category_WHJA7V"
+          "category_g9Hi8j"
         ],
         "settings": {
           "label": "Explore",
@@ -316,6 +306,44 @@
           "company_menu": "main-menu",
           "instagram_url": "",
           "facebook_url": ""
+        }
+      },
+      "about-hero": {
+        "type": "about-hero",
+        "settings": {
+          "heading": "Our Story",
+          "subtitle": "So much more than a Sierra Highway, it's a way of life!"
+        }
+      },
+      "about-story": {
+        "type": "about-story",
+        "settings": {
+          "small_heading": "SINCE 2012",
+          "heading": "Family Business, Mountain Roots",
+          "content": "<p>Founded in 2012 in Truckee, California 89 has grown from a small local shop into a family-owned business that celebrates the Sierra Nevada lifestyle. Our mission is to bring the beauty and inspiration of mountain living to homes and wardrobes everywhere.</p><p>Every product we curate tells a story of adventure, community, and the simple pleasures of life on Highway 89. From cozy apparel to handpicked home decor, we're committed to quality, authenticity, and the values that make mountain living special.</p>"
+        }
+      },
+      "about-values": {
+        "type": "about-values",
+        "settings": {
+          "heading": "What We Stand For"
+        }
+      },
+      "about-stores": {
+        "type": "about-stores",
+        "settings": {
+          "small_heading": "VISIT US",
+          "heading": "Our Stores",
+          "subtitle": "Stop by one of our three locations in Truckee and Tahoe City."
+        }
+      },
+      "about-cta": {
+        "type": "about-cta",
+        "settings": {
+          "heading": "Ready to Experience the 89 Lifestyle?",
+          "description": "Browse our collection of apparel and home decor, inspired by the backroads of California.",
+          "button_text": "Shop Now",
+          "button_link": "shopify://collections/all"
         }
       }
     },
