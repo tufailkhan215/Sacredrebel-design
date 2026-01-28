@@ -212,6 +212,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .category-showcase-card-large {
+    grid-row: span 2;
+  }
+
   .category-showcase-title {
     font-size: 4.4rem; /* md:text-5xl */
   }
@@ -346,6 +350,10 @@
 
   .category-showcase-container {
     padding: 0 3.2rem; /* lg:px-8 */
+  }
+
+  .category-showcase-grid {
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 columns on desktop */
   }
 
   .category-showcase-card-large {
