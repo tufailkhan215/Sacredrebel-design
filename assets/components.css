@@ -5,36 +5,54 @@
 /* Feature Icons */
 .feature-icons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  padding: 4rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+  padding: 4.8rem 0;
   background: var(--color-white);
+  border-top: 1px solid rgba(42, 42, 42, 0.1);
+  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 .feature-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .feature-icon-image {
-  width: 6rem;
-  height: 6rem;
+  width: 3.5rem;
+  height: 3.5rem;
   margin: 0 auto 1.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--color-light-gray);
+  background: #fef3c7; /* amber-100 */
+}
+
+.feature-icon-image svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #b45309; /* amber-700 */
+  stroke: currentColor;
+  fill: none;
 }
 
 .feature-icon-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #292524; /* stone-800 */
 }
 
 .feature-icon-text {
   font-size: 1.4rem;
-  color: var(--color-text-light);
+  color: #78716c; /* stone-500 */
 }
 
 /* Category Cards */

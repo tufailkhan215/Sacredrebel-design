@@ -102,7 +102,10 @@
   }
 
   .feature-icons {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   /* About Page Responsive */
@@ -210,6 +213,13 @@
 
   .mobile-menu-toggle {
     display: none;
+  }
+
+  .feature-icons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.2rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
   }
 }
 
