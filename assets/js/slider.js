@@ -14,7 +14,9 @@
       this.nextBtn = container.querySelector('.slider-nav.next');
       this.currentSlide = 0;
       this.autoPlayInterval = null;
-      this.autoPlayDelay = 5000; // 5 seconds
+      // Read auto-play delay from data attribute, default to 5000ms
+      const delayAttr = container.getAttribute('data-auto-play-delay');
+      this.autoPlayDelay = delayAttr ? parseInt(delayAttr, 10) : 5000;
 
       if (this.slides.length === 0) return;
 
@@ -37,12 +39,6 @@
       // Dot navigation
       this.dots.forEach((dot, index) => {
         dot.addEventListener('click', () => this.goToSlide(index));
-      });
-
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') this.prevSlide();
-        if (e.key === 'ArrowRight') this.nextSlide();
       });
 
       // Touch/swipe support
@@ -140,11 +136,63 @@
     }
   }
 
+  // Store all slider instances for keyboard navigation
+  const sliderInstances = [];
+
+  // Keyboard navigation (single listener for all sliders)
+  function handleKeyboardNavigation(e) {
+    // Don't navigate if user is typing in an input, textarea, or contenteditable
+    const target = e.target;
+    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
+      return;
+    }
+
+    // Find the first visible slider
+    for (const slider of sliderInstances) {
+      const rect = slider.container.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          slider.prevSlide();
+          return;
+        }
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          slider.nextSlide();
+          return;
+        }
+      }
+    }
+  }
+
   // Initialize all sliders on page load
-  document.addEventListener('DOMContentLoaded', function() {
+  function initSliders() {
     const sliders = document.querySelectorAll('.hero-slider');
     sliders.forEach(slider => {
-      new HeroSlider(slider);
+      // Skip if already initialized
+      if (slider.dataset.sliderInitialized === 'true') {
+        return;
+      }
+      slider.dataset.sliderInitialized = 'true';
+      const instance = new HeroSlider(slider);
+      sliderInstances.push(instance);
     });
-  });
+
+    // Add keyboard navigation listener once
+    if (sliderInstances.length > 0 && !window.heroSliderKeyboardListenerAdded) {
+      document.addEventListener('keydown', handleKeyboardNavigation);
+      window.heroSliderKeyboardListenerAdded = true;
+    }
+  }
+
+  // Initialize on DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSliders);
+  } else {
+    // DOM already loaded, initialize immediately
+    initSliders();
+  }
+
+  // Expose for potential dynamic initialization
+  window.initHeroSliders = initSliders;
 })();
