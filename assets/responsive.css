@@ -422,11 +422,31 @@
   .homepage-about-container {
     padding: 0 2.4rem; /* sm:px-6 */
   }
+
+  .instagram-feed-grid {
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+  }
+
+  .instagram-feed-heading {
+    font-size: 4.4rem; /* md:text-5xl */
+  }
+
+  .instagram-feed-container {
+    padding: 0 2.4rem; /* sm:px-6 */
+  }
 }
 
 @media (min-width: 1024px) {
   .homepage-about-container {
     padding: 0 3.2rem; /* lg:px-8 */
+  }
+
+  .instagram-feed-container {
+    padding: 0 3.2rem; /* lg:px-8 */
+  }
+
+  .instagram-feed-grid {
+    grid-template-columns: repeat(6, 1fr); /* lg:grid-cols-6 */
   }
 }
 
