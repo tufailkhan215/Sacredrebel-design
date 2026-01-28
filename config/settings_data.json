@@ -285,6 +285,21 @@
           "instagram_url": ""
         }
       },
+      "feature-showcase": {
+        "type": "feature-showcase",
+        "blocks": {},
+        "settings": {}
+      },
+      "home-showcase": {
+        "type": "home-showcase",
+        "blocks": {},
+        "settings": {}
+      },
+      "homepage-about": {
+        "type": "homepage-about",
+        "blocks": {},
+        "settings": {}
+      },
       "header": {
         "type": "header",
         "settings": {
@@ -352,6 +367,9 @@
       "feature-icons",
       "featured-products",
       "shop-by-category",
+      "feature-showcase",
+      "home-showcase",
+      "homepage-about",
       "customer-testimonials",
       "blog-posts",
       "instagram-feed"
