@@ -60,7 +60,7 @@
             "settings": {
               "title": "Free Shipping",
               "description": "On orders over $75",
-              "icon": "truck"
+              "icon": "shield"
             }
           },
           "feature_tDPVLi": {
@@ -68,7 +68,7 @@
             "settings": {
               "title": "Free Shipping",
               "description": "On orders over $75",
-              "icon": "truck"
+              "icon": "headset"
             }
           },
           "feature_73geN8": {
@@ -76,7 +76,7 @@
             "settings": {
               "title": "Free Shipping",
               "description": "On orders over $75",
-              "icon": "truck"
+              "icon": "leaf"
             }
           }
         },
@@ -91,10 +91,11 @@
       "featured-products": {
         "type": "featured-products",
         "settings": {
+          "small_label": "Shop Our Collection",
           "heading": "Featured Products",
+          "description": "Discover our handpicked selection of apparel and lifestyle goods, inspired by the backroads of California.",
           "collection": "frontpage",
-          "products_to_show": 8,
-          "background_color": "#f5f5f5"
+          "products_to_show": 8
         }
       },
       "shop-by-category": {
