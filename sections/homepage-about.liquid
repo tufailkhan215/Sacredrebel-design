@@ -9,10 +9,10 @@
       "default": "Our Story"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "Family Business, Mountain Roots"
+      "default": "<p>Family Business,<br>Mountain Roots</p>"
     },
     {
       "type": "textarea",
@@ -123,7 +123,7 @@
         {%- endif -%}
         
         {%- if section.settings.heading != blank -%}
-          <h2 class="homepage-about-heading">{{ section.settings.heading | replace: ',', ',<br>' }}</h2>
+          <h2 class="homepage-about-heading">{{ section.settings.heading }}</h2>
         {%- endif -%}
         
         {%- if section.settings.paragraph_1 != blank -%}

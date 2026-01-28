@@ -1076,6 +1076,14 @@
   line-height: 1.1;
 }
 
+.homepage-about-heading p {
+  margin: 0;
+}
+
+.homepage-about-heading br {
+  display: block;
+}
+
 .homepage-about-paragraph {
   font-size: 1.8rem; /* text-lg */
   color: #78716c; /* stone-600 */
