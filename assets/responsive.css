@@ -27,6 +27,24 @@
     display: none;
   }
 
+  .header-wrapper {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+  }
+
+  .logo {
+    justify-self: center;
+    grid-column: 2;
+  }
+
+  .mobile-menu-toggle {
+    grid-column: 1;
+  }
+
+  .header-actions {
+    grid-column: 3;
+  }
+
   .product-grid {
     grid-template-columns: 1fr;
     gap: 2rem;

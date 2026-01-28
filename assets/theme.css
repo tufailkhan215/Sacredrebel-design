@@ -152,9 +152,10 @@ a:hover {
 }
 
 .header-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -179,6 +180,8 @@ a:hover {
   display: flex;
   gap: 3rem;
   list-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-menu a {

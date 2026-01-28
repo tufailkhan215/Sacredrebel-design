@@ -52,7 +52,7 @@
       {%- if section.settings.newsletter_description != blank -%}
         <p>{{ section.settings.newsletter_description }}</p>
       {%- endif -%}
-      <form class="newsletter-form" action="{{ routes.cart_url }}" method="post">
+      <form class="newsletter-form" action="{{ routes.cart_url }}" method="post" id="newsletter-form">
         <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
         <button type="submit" class="btn btn-primary">Subscribe →</button>
       </form>
