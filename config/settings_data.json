@@ -108,7 +108,7 @@
               "description": "Everyday apparel for mountain life",
               "image": "shopify://shop_images/photo-1533090481720-856c6e3c1fdc.jpg",
               "link": "",
-              "large_card": false
+              "large_card": true
             }
           },
           "category_qr49WV": {
@@ -140,13 +140,23 @@
               "link": "",
               "large_card": false
             }
+          },
+          "category_WHJA7V": {
+            "type": "category",
+            "settings": {
+              "title": "Apparel",
+              "description": "Everyday apparel for mountain life",
+              "link": "",
+              "large_card": false
+            }
           }
         },
         "block_order": [
           "category_wMrfjX",
           "category_qr49WV",
           "category_fYiyqy",
-          "category_g9Hi8j"
+          "category_g9Hi8j",
+          "category_WHJA7V"
         ],
         "settings": {
           "label": "Explore",
@@ -157,6 +167,16 @@
       "customer-testimonials": {
         "type": "customer-testimonials",
         "blocks": {
+          "testimonial_Bpa7y9": {
+            "type": "testimonial",
+            "settings": {
+              "rating": 5,
+              "text": "Great products and excellent service!",
+              "author": "John Doe",
+              "product_name": "Mountain Hoodie",
+              "verified": true
+            }
+          },
           "testimonial_QWcDQc": {
             "type": "testimonial",
             "settings": {
@@ -189,6 +209,7 @@
           }
         },
         "block_order": [
+          "testimonial_Bpa7y9",
           "testimonial_QWcDQc",
           "testimonial_UwkTDH",
           "testimonial_L4cLnm"
