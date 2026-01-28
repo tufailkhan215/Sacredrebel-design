@@ -142,15 +142,14 @@ a:hover {
 }
 
 .header-container.header-sticky {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   will-change: transform;
   align-self: start;
 }
-
+.scrol-content{ padding-top: 120px;}
 /* Top Promotional Bar */
 .promo-bar {
   background-color: var(--color-dark-gray);
