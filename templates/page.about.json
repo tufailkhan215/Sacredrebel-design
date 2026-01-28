@@ -1,10 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "page-content": {
-      "type": "page-content"
+      "type": "page-content",
+      "disabled": true,
+      "settings": {}
+    },
+    "about_hero_WghKNJ": {
+      "type": "about-hero",
+      "name": "About Hero",
+      "settings": {
+        "background_image": "shopify://shop_images/photo-1463693396721-8ca0cfa2b3b5.jpg",
+        "heading": "Our Story",
+        "subtitle": "So much more than a Sierra Highway, it's a way of life!"
+      }
+    },
+    "about_story_jYLfR3": {
+      "type": "about-story",
+      "name": "About Story",
+      "settings": {
+        "small_heading": "SINCE 2012",
+        "heading": "Family Business, Mountain Roots",
+        "content": "<p>Founded in 2012 in Truckee, California 89 has grown from a small local shop into a family-owned business that celebrates the Sierra Nevada lifestyle. Our mission is to bring the beauty and inspiration of mountain living to homes and wardrobes everywhere.</p><p>Every product we curate tells a story of adventure, community, and the simple pleasures of life on Highway 89. From cozy apparel to handpicked home decor, we're committed to quality, authenticity, and the values that make mountain living special.</p>",
+        "image": "shopify://shop_images/3_8931bde3-6089-43a1-9578-7c019e7e7312.jpg"
+      }
+    },
+    "about_values_WznM9H": {
+      "type": "about-values",
+      "blocks": {
+        "value_ViJHAf": {
+          "type": "value",
+          "settings": {
+            "icon": "mountain",
+            "title": "Mountain Living",
+            "description": "Inspired by the Sierra Nevada lifestyle"
+          }
+        },
+        "value_GrXLb3": {
+          "type": "value",
+          "settings": {
+            "icon": "heart",
+            "title": "Family First",
+            "description": "Built on family values and community"
+          }
+        },
+        "value_paWRBt": {
+          "type": "value",
+          "settings": {
+            "icon": "person",
+            "title": "Authentic",
+            "description": "Genuine products for real mountain life"
+          }
+        },
+        "value_HQyBFE": {
+          "type": "value",
+          "settings": {
+            "icon": "leaf",
+            "title": "Sustainable",
+            "description": "Committed to quality and sustainability"
+          }
+        }
+      },
+      "block_order": [
+        "value_ViJHAf",
+        "value_GrXLb3",
+        "value_paWRBt",
+        "value_HQyBFE"
+      ],
+      "name": "About Values",
+      "settings": {
+        "heading": "What We Stand For"
+      }
+    },
+    "about_cta_AdApqy": {
+      "type": "about-cta",
+      "name": "About CTA",
+      "settings": {
+        "heading": "Ready to Experience the 89 Lifestyle?",
+        "description": "Browse our collection of apparel and home decor, inspired by the backroads of California.",
+        "button_text": "Shop Now",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "about_stores_f7yQxV": {
+      "type": "about-stores",
+      "blocks": {
+        "store_WWCckn": {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Truckee",
+            "address": "12345 Highway 89\nTruckee, CA 96161",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 123-4567",
+            "directions_link": ""
+          }
+        },
+        "store_tVm7D3": {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Tahoe City",
+            "address": "67890 North Lake Blvd\nTahoe City, CA 96145",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 987-6543",
+            "directions_link": ""
+          }
+        },
+        "store_gdhqqh": {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Kings Beach",
+            "address": "11111 Highway 28\nKings Beach, CA 96143",
+            "hours": "Daily 10am - 6pm",
+            "phone": "(530) 555-1234",
+            "directions_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "store_WWCckn",
+        "store_tVm7D3",
+        "store_gdhqqh"
+      ],
+      "name": "About Stores",
+      "settings": {
+        "small_heading": "VISIT US",
+        "heading": "Our Stores",
+        "subtitle": "Stop by one of our three locations in Truckee and Tahoe City."
+      }
     }
   },
   "order": [
-    "page-content"
+    "page-content",
+    "about_hero_WghKNJ",
+    "about_story_jYLfR3",
+    "about_values_WznM9H",
+    "about_cta_AdApqy",
+    "about_stores_f7yQxV"
   ]
 }
