@@ -260,6 +260,15 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+      "hero-slider",
+      "feature-icons",
+      "featured-products",
+      "shop-by-category",
+      "feature-showcase",
+      "customer-testimonials",
+      "blog-posts",
+      "instagram-feed"
+    ]
   }
 }
