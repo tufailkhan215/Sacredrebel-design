@@ -176,15 +176,73 @@
             "list_item_3": "List Item 3",
             "list_item_4": "List Item 4"
           }
+        },
+        "feature_WhCxGj": {
+          "type": "feature",
+          "settings": {
+            "layout": "right",
+            "label": "Discover 89 Classics",
+            "heading": "It's Hoodie Season",
+            "description": "This Product is a Staple of the California 89 Brand. Been on the floor since day 1 in 2012, this product continues to be one of our best sellers.",
+            "main_image": "shopify://shop_images/1.jpg",
+            "thumbnail_image": "shopify://shop_images/55.jpg",
+            "badge_text": "Best Seller",
+            "price": "$60.00",
+            "show_sizes": true,
+            "button_text": "Shop Hoodies",
+            "button_link": "",
+            "button_style": "primary",
+            "list_item_1": "List Item 1",
+            "list_item_2": "List Item 2",
+            "list_item_3": "List Item 2",
+            "list_item_4": "List Item 2"
+          }
         }
       },
       "block_order": [
-        "feature_39nqeP"
+        "feature_39nqeP",
+        "feature_WhCxGj"
       ],
       "settings": {}
     },
     "home-showcase": {
       "type": "home-showcase",
+      "blocks": {
+        "product_qfTfif": {
+          "type": "product",
+          "settings": {
+            "product": "sleeper-module",
+            "badge_text": ""
+          }
+        },
+        "product_z9wHKC": {
+          "type": "product",
+          "settings": {
+            "product": "block-table",
+            "badge_text": ""
+          }
+        },
+        "product_mpVDQe": {
+          "type": "product",
+          "settings": {
+            "product": "circus-pouf-small",
+            "badge_text": "Badge Text"
+          }
+        },
+        "product_iNHikN": {
+          "type": "product",
+          "settings": {
+            "product": "ceramic-pot",
+            "badge_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_qfTfif",
+        "product_z9wHKC",
+        "product_mpVDQe",
+        "product_iNHikN"
+      ],
       "settings": {
         "label": "CA89 Home",
         "heading": "Modern Mountain Living",
