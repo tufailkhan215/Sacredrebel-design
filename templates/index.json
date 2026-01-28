@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "hero-slider": {
+      "type": "hero-slider"
+    },
+    "feature-icons": {
+      "type": "feature-icons"
+    },
+    "featured-products": {
+      "type": "featured-products"
+    },
+    "shop-by-category": {
+      "type": "shop-by-category"
+    },
+    "feature-showcase": {
+      "type": "feature-showcase"
+    },
+    "home-showcase": {
+      "type": "home-showcase"
+    },
+    "homepage-about": {
+      "type": "homepage-about"
+    },
+    "customer-testimonials": {
+      "type": "customer-testimonials"
+    },
+    "blog-posts": {
+      "type": "blog-posts"
+    },
+    "instagram-feed": {
+      "type": "instagram-feed"
+    }
+  },
+  "order": [
+    "hero-slider",
+    "feature-icons",
+    "featured-products",
+    "shop-by-category",
+    "feature-showcase",
+    "home-showcase",
+    "homepage-about",
+    "customer-testimonials",
+    "blog-posts",
+    "instagram-feed"
+  ]
+}
