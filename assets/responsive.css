@@ -321,6 +321,7 @@
   .blog-posts-grid {
     grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
     gap: 1.5rem; /* gap-6 = 24px */
+    grid-auto-rows: minmax(min-content, auto); /* Allow rows to size based on content */
   }
 
   .blog-post-card-featured {
