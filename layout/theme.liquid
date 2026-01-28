@@ -216,10 +216,10 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
-    {{ 'components.css' | asset_url | stylesheet_tag }}
-    {{ 'utilities.css' | asset_url | stylesheet_tag }}
-    {{ 'responsive.css' | asset_url | stylesheet_tag }}
+    {{ 'css/theme.css' | asset_url | stylesheet_tag }}
+    {{ 'css/components.css' | asset_url | stylesheet_tag }}
+    {{ 'css/utilities.css' | asset_url | stylesheet_tag }}
+    {{ 'css/responsive.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -287,12 +287,12 @@
       }
     </script>
 
-    {{ 'theme.js' | asset_url | script_tag }}
-    {{ 'cart.js' | asset_url | script_tag }}
-    {{ 'slider.js' | asset_url | script_tag }}
-    {{ 'filters.js' | asset_url | script_tag }}
-    {{ 'product.js' | asset_url | script_tag }}
-    {{ 'menu.js' | asset_url | script_tag }}
-    {{ 'animations.js' | asset_url | script_tag }}
+    {{ 'js/theme.js' | asset_url | script_tag }}
+    {{ 'js/cart.js' | asset_url | script_tag }}
+    {{ 'js/slider.js' | asset_url | script_tag }}
+    {{ 'js/filters.js' | asset_url | script_tag }}
+    {{ 'js/product.js' | asset_url | script_tag }}
+    {{ 'js/menu.js' | asset_url | script_tag }}
+    {{ 'js/animations.js' | asset_url | script_tag }}
   </body>
 </html>
