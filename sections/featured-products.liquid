@@ -4,9 +4,21 @@
   "settings": [
     {
       "type": "text",
+      "id": "small_label",
+      "label": "Small Label",
+      "default": "Shop Our Collection"
+    },
+    {
+      "type": "text",
       "id": "heading",
       "label": "Heading",
       "default": "Featured Products"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover our handpicked selection of apparel and lifestyle goods, inspired by the backroads of California."
     },
     {
       "type": "collection",
@@ -21,12 +33,6 @@
       "max": 16,
       "step": 2,
       "default": 8
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#f5f5f5"
     }
   ],
   "presets": [
@@ -38,11 +44,19 @@
 {% endschema %}
 
 {%- if section.settings.collection != blank -%}
-  <section class="section" style="background-color: {{ section.settings.background_color }};">
-    <div class="container">
-      {%- if section.settings.heading != blank -%}
-        <h2 class="section-title">{{ section.settings.heading }}</h2>
-      {%- endif -%}
+  <section class="featured-products-section">
+    <div class="featured-products-container">
+      <div class="featured-products-header">
+        {%- if section.settings.small_label != blank -%}
+          <span class="featured-products-label">{{ section.settings.small_label }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="featured-products-title">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <p class="featured-products-description">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
 
       <div class="product-grid">
         {%- for product in collections[section.settings.collection].products limit: section.settings.products_to_show -%}
@@ -50,8 +64,8 @@
         {%- endfor -%}
       </div>
 
-      <div class="text-center mt-4">
-        <a href="{{ collections[section.settings.collection].url }}" class="btn btn-outline">
+      <div class="featured-products-cta">
+        <a href="{{ collections[section.settings.collection].url }}" class="btn-view-all">
           View All Products
         </a>
       </div>

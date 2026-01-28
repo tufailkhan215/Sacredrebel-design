@@ -85,8 +85,16 @@
   }
 
   .product-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.4rem;
+  }
+
+  .featured-products-title {
+    font-size: 3.6rem;
+  }
+
+  .featured-products-section {
+    padding: 5rem 0;
   }
 
   .category-grid {
@@ -181,6 +189,11 @@
 @media (min-width: 576px) and (max-width: 767.98px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+
+  .featured-products-title {
+    font-size: 4.4rem;
   }
 
   .category-grid {
@@ -220,6 +233,25 @@
     gap: 3.2rem;
     padding-left: 2.4rem;
     padding-right: 2.4rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-products-title {
+    font-size: 4.4rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .featured-products-title {
+    font-size: 4.8rem;
   }
 }
 
