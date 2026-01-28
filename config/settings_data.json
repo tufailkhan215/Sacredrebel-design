@@ -242,8 +242,8 @@
           "newsletter_heading": "Join the 89 Community",
           "newsletter_description": "Get the scoop on new arrivals, special promos and sales.",
           "company_description": "So much more than a Sierra Highway, it's a way of life! Apparel and lifestyle goods for modern mountain living.",
-          "shop_menu": "",
-          "company_menu": "",
+          "shop_menu": "footer",
+          "company_menu": "main-menu",
           "instagram_url": "",
           "facebook_url": ""
         }
