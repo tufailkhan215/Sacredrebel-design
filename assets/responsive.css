@@ -197,15 +197,25 @@
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
+/* Medium devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+  .featured-products-section .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+  }
+
+  .featured-products-container {
+    padding: 0 2.4rem; /* sm:px-6 */
+  }
+
+  .featured-products-title {
+    font-size: 4.4rem; /* md:text-5xl */
+  }
+}
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.4rem;
-  }
-
-  .featured-products-title {
-    font-size: 4.4rem;
   }
 
   .category-showcase-grid {
@@ -340,6 +350,14 @@
 
 /* Extra large devices (large desktops, 1024px and up) */
 @media (min-width: 1024px) {
+  .featured-products-section .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
+  }
+
+  .featured-products-container {
+    padding: 0 3.2rem; /* lg:px-8 */
+  }
+
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
   }
