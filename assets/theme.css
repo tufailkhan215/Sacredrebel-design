@@ -128,6 +128,16 @@ a:hover {
   background-color: var(--color-light-gray);
 }
 
+/* Header Container */
+.header-container {
+  z-index: 1000;
+}
+
+.header-container.header-sticky {
+  position: sticky;
+  top: 0;
+}
+
 /* Top Promotional Bar */
 .promo-bar {
   background-color: var(--color-dark-gray);
@@ -141,9 +151,6 @@ a:hover {
 .header {
   background-color: var(--color-white);
   border-bottom: 1px solid rgba(42, 42, 42, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   transition: var(--transition);
 }
 

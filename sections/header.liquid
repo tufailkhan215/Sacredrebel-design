@@ -30,18 +30,26 @@
       "id": "menu",
       "label": "Menu",
       "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Enable sticky/fixed header",
+      "default": true,
+      "info": "When enabled, the header will remain fixed at the top when scrolling"
     }
   ]
 }
 {% endschema %}
 
-{%- if section.settings.promo_text != blank -%}
-<div class="promo-bar">
-  {{ section.settings.promo_text }}
-</div>
-{%- endif -%}
+<div class="header-container{% if section.settings.sticky_header %} header-sticky{% endif %}">
+  {%- if section.settings.promo_text != blank -%}
+  <div class="promo-bar">
+    {{ section.settings.promo_text }}
+  </div>
+  {%- endif -%}
 
-<header class="header" id="header">
+  <header class="header" id="header">
   <div class="header-wrapper">
     <button class="mobile-menu-toggle" aria-label="Toggle menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -98,7 +106,8 @@
 
   {%- render 'mobile-menu', menu: section.settings.menu -%}
   {%- render 'search-bar' -%}
-</header>
+  </header>
+</div>
 
 <div class="cart-drawer-overlay"></div>
 {%- render 'cart-drawer' -%}
