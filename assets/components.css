@@ -1035,6 +1035,149 @@
   transform: translateX(8px); /* group-hover:translate-x-2 */
 }
 
+/* Instagram Feed Section */
+.instagram-feed-section {
+  padding: 8rem 0; /* py-20 */
+  background-color: #1c1917; /* bg-stone-900 */
+}
+
+.instagram-feed-container {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1.6rem; /* px-4 */
+}
+
+.instagram-feed-header {
+  text-align: center;
+  margin-bottom: 4.8rem; /* mb-12 */
+}
+
+.instagram-feed-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem; /* gap-2 */
+  color: #f59e0b; /* amber-500 */
+  margin-bottom: 1.6rem; /* mb-4 */
+}
+
+.instagram-feed-icon {
+  width: 2.4rem; /* w-6 */
+  height: 2.4rem; /* h-6 */
+}
+
+.instagram-feed-handle-text {
+  font-weight: 500; /* font-medium */
+}
+
+.instagram-feed-heading {
+  font-size: 3.6rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  color: var(--color-white);
+  margin-bottom: 1.6rem; /* mb-4 */
+  line-height: 1.1;
+}
+
+.instagram-feed-description {
+  font-size: 1.6rem;
+  color: #a8a29e; /* stone-400 */
+  max-width: 672px; /* max-w-2xl */
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.instagram-feed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* grid-cols-2 */
+  gap: 1.6rem; /* gap-4 */
+}
+
+.instagram-feed-item {
+  position: relative;
+  aspect-ratio: 1 / 1; /* aspect-square */
+  border-radius: 12px; /* rounded-xl */
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+
+.instagram-feed-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.5s ease; /* duration-500 */
+}
+
+.instagram-feed-item:hover .instagram-feed-image {
+  transform: scale(1.1); /* group-hover:scale-110 */
+}
+
+.instagram-feed-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0); /* bg-black/0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease; /* duration-300 */
+}
+
+.instagram-feed-item:hover .instagram-feed-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* group-hover:bg-black/50 */
+}
+
+.instagram-feed-likes {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* gap-2 */
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity 0.3s ease; /* duration-300 */
+}
+
+.instagram-feed-item:hover .instagram-feed-likes {
+  opacity: 1; /* group-hover:opacity-100 */
+}
+
+.instagram-feed-heart {
+  width: 2rem; /* w-5 */
+  height: 2rem; /* h-5 */
+  fill: var(--color-white);
+}
+
+.instagram-feed-like-count {
+  font-weight: 500; /* font-medium */
+}
+
+.instagram-feed-cta {
+  text-align: center;
+  margin-top: 4.8rem; /* mt-12 */
+}
+
+.instagram-feed-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.6rem 3.2rem; /* px-8 py-4 */
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  font-weight: 500; /* font-medium */
+  border-radius: 8px; /* rounded-lg */
+  text-decoration: none;
+  transition: all 0.3s ease; /* transition-all duration-300 */
+}
+
+.instagram-feed-button:hover {
+  background-color: var(--color-white);
+  color: #1c1917; /* hover:text-stone-900 */
+}
+
+.instagram-feed-button-icon {
+  width: 2rem; /* w-5 */
+  height: 2rem; /* h-5 */
+  margin-right: 0.8rem; /* mr-2 */
+}
+
 /* Homepage About Section */
 .homepage-about-section {
   padding: 8rem 0; /* py-20 */
