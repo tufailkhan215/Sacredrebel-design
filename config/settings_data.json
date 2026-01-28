@@ -105,32 +105,40 @@
             "type": "category",
             "settings": {
               "title": "Apparel",
+              "description": "Everyday apparel for mountain life",
               "image": "shopify://shop_images/photo-1533090481720-856c6e3c1fdc.jpg",
-              "link": ""
+              "link": "",
+              "large_card": false
             }
           },
           "category_qr49WV": {
             "type": "category",
             "settings": {
               "title": "Apparel",
+              "description": "Everyday apparel for mountain life",
               "image": "shopify://shop_images/photo-1578952258885-6ee0651294e6.jpg",
-              "link": ""
+              "link": "",
+              "large_card": false
             }
           },
           "category_fYiyqy": {
             "type": "category",
             "settings": {
               "title": "Apparel",
+              "description": "Everyday apparel for mountain life",
               "image": "shopify://shop_images/photo-1578952258885-6ee0651294e6.jpg",
-              "link": ""
+              "link": "",
+              "large_card": false
             }
           },
           "category_g9Hi8j": {
             "type": "category",
             "settings": {
               "title": "Apparel",
+              "description": "Everyday apparel for mountain life",
               "image": "shopify://shop_images/photo-1578952258885-6ee0651294e6.jpg",
-              "link": ""
+              "link": "",
+              "large_card": false
             }
           }
         },
@@ -140,7 +148,11 @@
           "category_fYiyqy",
           "category_g9Hi8j"
         ],
-        "settings": {}
+        "settings": {
+          "label": "Explore",
+          "heading": "Shop by Category",
+          "description": "From cozy apparel to modern home decor, find everything you need for mountain living."
+        }
       },
       "customer-testimonials": {
         "type": "customer-testimonials",
@@ -151,7 +163,7 @@
               "rating": 5,
               "text": "Great products and excellent service!",
               "author": "John Doe",
-              "location": "Truckee, CA",
+              "product_name": "Mountain Hoodie",
               "verified": true
             }
           },
@@ -161,7 +173,7 @@
               "rating": 5,
               "text": "Great products and excellent service!",
               "author": "John Doe",
-              "location": "Truckee, CA",
+              "product_name": "Mountain Hoodie",
               "verified": true
             }
           },
@@ -171,7 +183,7 @@
               "rating": 5,
               "text": "Great products and excellent service!",
               "author": "John Doe",
-              "location": "Truckee, CA",
+              "product_name": "Mountain Hoodie",
               "verified": true
             }
           }
@@ -182,7 +194,17 @@
           "testimonial_L4cLnm"
         ],
         "settings": {
-          "heading": "What Our Customers Say"
+          "label": "Testimonials",
+          "heading": "What Our Customers Say",
+          "description": "Join thousands of happy customers who love the California 89 lifestyle.",
+          "stat_1_value": "12.4K",
+          "stat_1_label": "Happy Customers",
+          "stat_2_value": "4.9",
+          "stat_2_label": "Average Rating",
+          "stat_3_value": "13+",
+          "stat_3_label": "Years in Business",
+          "stat_4_value": "3",
+          "stat_4_label": "Store Locations"
         }
       },
       "blog-posts": {
@@ -195,6 +217,20 @@
       "instagram-feed": {
         "type": "instagram-feed",
         "blocks": {
+          "image_B37eGi": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/75.jpg",
+              "link": ""
+            }
+          },
+          "image_z8N9zn": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/86.jpg",
+              "link": ""
+            }
+          },
           "image_4pAw9p": {
             "type": "image",
             "settings": {
@@ -225,6 +261,8 @@
           }
         },
         "block_order": [
+          "image_B37eGi",
+          "image_z8N9zn",
           "image_4pAw9p",
           "image_gJ3zqh",
           "image_wfEM9N",
@@ -265,7 +303,6 @@
       "feature-icons",
       "featured-products",
       "shop-by-category",
-      "feature-showcase",
       "customer-testimonials",
       "blog-posts",
       "instagram-feed"
