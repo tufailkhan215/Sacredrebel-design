@@ -319,14 +319,8 @@
   }
 
   .blog-posts-grid {
-    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns, min 280px */
     gap: 1.5rem; /* gap-6 = 24px */
-    grid-auto-rows: minmax(min-content, auto); /* Allow rows to size based on content */
-  }
-
-  .blog-post-card-featured {
-    grid-column: span 2; /* md:col-span-2 */
-    grid-row: span 2; /* md:row-span-2 */
   }
 }
 

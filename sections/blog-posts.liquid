@@ -24,7 +24,7 @@
       "id": "posts_to_show",
       "label": "Posts to show",
       "min": 2,
-      "max": 6,
+      "max": 12,
       "step": 1,
       "default": 3
     },
@@ -72,8 +72,7 @@
       {%- if blog_articles.size > 0 -%}
         <div class="blog-posts-grid">
           {%- for article in blog_articles limit: posts_limit -%}
-            {%- assign is_featured = forloop.first -%}
-            <a href="{{ article.url }}" class="blog-post-card{% if is_featured %} blog-post-card-featured{% endif %}">
+            <a href="{{ article.url }}" class="blog-post-card">
               <div class="blog-post-image-wrapper">
                 {%- if article.image != blank -%}
                   <img 
