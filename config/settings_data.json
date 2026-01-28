@@ -47,6 +47,14 @@
       "feature-icons": {
         "type": "feature-icons",
         "blocks": {
+          "feature_iP8dJ7": {
+            "type": "feature",
+            "settings": {
+              "title": "Free Shipping",
+              "description": "On orders over $75",
+              "icon": "truck"
+            }
+          },
           "feature_mEeJda": {
             "type": "feature",
             "settings": {
@@ -73,6 +81,7 @@
           }
         },
         "block_order": [
+          "feature_iP8dJ7",
           "feature_mEeJda",
           "feature_tDPVLi",
           "feature_73geN8"
