@@ -33,86 +33,191 @@
     {
       "type": "url",
       "id": "instagram_url",
-      "label": "Instagram URL"
+      "label": "Instagram URL",
+      "default": "https://instagram.com/cahwy89"
     },
     {
       "type": "url",
       "id": "facebook_url",
-      "label": "Facebook URL"
+      "label": "Facebook URL",
+      "default": "https://facebook.com/california89"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store",
+      "name": "Store Location",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Store Name",
+          "default": "California 89 - Truckee"
+        },
+        {
+          "type": "text",
+          "id": "address",
+          "label": "Address",
+          "default": "10052 Donner Pass Rd, Truckee, CA 96161"
+        },
+        {
+          "type": "text",
+          "id": "hours",
+          "label": "Hours",
+          "default": "Daily 10am - 6pm"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        {
+          "type": "store",
+          "settings": {
+            "name": "California 89 - Truckee",
+            "address": "10052 Donner Pass Rd, Truckee, CA 96161",
+            "hours": "Daily 10am - 6pm"
+          }
+        },
+        {
+          "type": "store",
+          "settings": {
+            "name": "CA89 Home - Truckee",
+            "address": "10058 Donner Pass Rd, Truckee, CA 96161",
+            "hours": "Daily 10am - 6pm"
+          }
+        }
+      ]
     }
   ]
 }
 {% endschema %}
 
 <footer class="footer">
-  <div class="footer-top">
-    {%- if section.settings.newsletter_heading != blank -%}
-    <div class="footer-newsletter">
-      <h3>{{ section.settings.newsletter_heading }}</h3>
-      {%- if section.settings.newsletter_description != blank -%}
-        <p>{{ section.settings.newsletter_description }}</p>
-      {%- endif -%}
-      <form class="newsletter-form" action="{{ routes.cart_url }}" method="post" id="newsletter-form">
-        <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
-        <button type="submit" class="btn btn-primary">Subscribe →</button>
-      </form>
-    </div>
-    {%- endif -%}
-
-    <div class="footer-content">
-      <div class="footer-column">
-        <h4>CALIFORNIA 89</h4>
-        <p>{{ section.settings.company_description }}</p>
-        <div class="social-icons">
-          {%- if section.settings.instagram_url != blank -%}
-            <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener">
-              <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
+  <div class="footer-newsletter-section">
+    <div class="footer-container">
+      <div class="footer-newsletter-wrapper">
+        <div class="footer-newsletter-content">
+          {%- if section.settings.newsletter_heading != blank -%}
+            <h3 class="footer-newsletter-heading">{{ section.settings.newsletter_heading }}</h3>
           {%- endif -%}
-          {%- if section.settings.facebook_url != blank -%}
-            <a href="{{ section.settings.facebook_url }}" target="_blank" rel="noopener">
-              <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
+          {%- if section.settings.newsletter_description != blank -%}
+            <p class="footer-newsletter-description">{{ section.settings.newsletter_description }}</p>
           {%- endif -%}
         </div>
+        <form class="footer-newsletter-form" action="{{ routes.cart_url }}" method="post" id="newsletter-form">
+          <div class="footer-newsletter-input-wrapper">
+            <input 
+              type="email" 
+              name="contact[email]" 
+              class="footer-newsletter-input" 
+              placeholder="Enter your email" 
+              required
+            >
+          </div>
+          <button type="submit" class="footer-newsletter-button">
+            Subscribe
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-newsletter-arrow" aria-hidden="true">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </form>
       </div>
-
-      {%- if linklists[section.settings.shop_menu].links.size > 0 -%}
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <ul>
-          {%- for link in linklists[section.settings.shop_menu].links -%}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {%- endfor -%}
-        </ul>
-      </div>
-      {%- endif -%}
-
-      {%- if linklists[section.settings.company_menu].links.size > 0 -%}
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul>
-          {%- for link in linklists[section.settings.company_menu].links -%}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {%- endfor -%}
-        </ul>
-      </div>
-      {%- endif -%}
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <p>&copy; {{ 'now' | date: '%Y' }} California 89. All rights reserved.</p>
-    <div class="footer-bottom-links">
-      <a href="/policies/privacy-policy">Privacy Policy</a>
-      <a href="/policies/terms-of-service">Terms of Service</a>
-      <a href="/policies/shipping-policy">Shipping & Returns</a>
+  <div class="footer-main-section">
+    <div class="footer-container">
+      <div class="footer-content-grid">
+        <div class="footer-column">
+          <h4 class="footer-column-title">CALIFORNIA 89</h4>
+          {%- if section.settings.company_description != blank -%}
+            <p class="footer-column-description">{{ section.settings.company_description }}</p>
+          {%- endif -%}
+          <div class="footer-social-icons">
+            {%- if section.settings.instagram_url != blank -%}
+              <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </a>
+            {%- endif -%}
+            {%- if section.settings.facebook_url != blank -%}
+              <a href="{{ section.settings.facebook_url }}" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- if linklists[section.settings.shop_menu].links.size > 0 -%}
+          <div class="footer-column">
+            <h4 class="footer-column-heading">Shop</h4>
+            <ul class="footer-column-list">
+              {%- for link in linklists[section.settings.shop_menu].links -%}
+                <li class="footer-column-item">
+                  <a href="{{ link.url }}" class="footer-column-link">{{ link.title }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- if linklists[section.settings.company_menu].links.size > 0 -%}
+          <div class="footer-column">
+            <h4 class="footer-column-heading">Company</h4>
+            <ul class="footer-column-list">
+              {%- for link in linklists[section.settings.company_menu].links -%}
+                <li class="footer-column-item">
+                  <a href="{{ link.url }}" class="footer-column-link">{{ link.title }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <div class="footer-column">
+            <h4 class="footer-column-heading">Visit Us</h4>
+            <div class="footer-stores-list">
+              {%- for block in section.blocks -%}
+                <div class="footer-store" {{ block.shopify_attributes }}>
+                  {%- if block.settings.name != blank -%}
+                    <p class="footer-store-name">{{ block.settings.name }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.address != blank -%}
+                    <p class="footer-store-address">{{ block.settings.address }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.hours != blank -%}
+                    <p class="footer-store-hours">{{ block.settings.hours }}</p>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-section">
+    <div class="footer-container">
+      <div class="footer-bottom-wrapper">
+        <p class="footer-copyright">&copy; {{ 'now' | date: '%Y' }} California 89. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="/policies/privacy-policy" class="footer-bottom-link">Privacy Policy</a>
+          <a href="/policies/terms-of-service" class="footer-bottom-link">Terms of Service</a>
+          <a href="/policies/shipping-policy" class="footer-bottom-link">Shipping & Returns</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
+
