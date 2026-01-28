@@ -83,17 +83,94 @@
         "type": "featured-products",
         "settings": {
           "heading": "Featured Products",
-          "collection": "",
+          "collection": "frontpage",
           "products_to_show": 8,
           "background_color": "#f5f5f5"
         }
       },
       "shop-by-category": {
         "type": "shop-by-category",
+        "blocks": {
+          "category_wMrfjX": {
+            "type": "category",
+            "settings": {
+              "title": "Apparel",
+              "image": "shopify://shop_images/photo-1533090481720-856c6e3c1fdc.jpg",
+              "link": ""
+            }
+          },
+          "category_qr49WV": {
+            "type": "category",
+            "settings": {
+              "title": "Apparel",
+              "image": "shopify://shop_images/photo-1578952258885-6ee0651294e6.jpg",
+              "link": ""
+            }
+          },
+          "category_fYiyqy": {
+            "type": "category",
+            "settings": {
+              "title": "Apparel",
+              "image": "shopify://shop_images/photo-1578952258885-6ee0651294e6.jpg",
+              "link": ""
+            }
+          },
+          "category_g9Hi8j": {
+            "type": "category",
+            "settings": {
+              "title": "Apparel",
+              "image": "shopify://shop_images/photo-1578952258885-6ee0651294e6.jpg",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "category_wMrfjX",
+          "category_qr49WV",
+          "category_fYiyqy",
+          "category_g9Hi8j"
+        ],
         "settings": {}
       },
       "customer-testimonials": {
         "type": "customer-testimonials",
+        "blocks": {
+          "testimonial_QWcDQc": {
+            "type": "testimonial",
+            "settings": {
+              "rating": 5,
+              "text": "Great products and excellent service!",
+              "author": "John Doe",
+              "location": "Truckee, CA",
+              "verified": true
+            }
+          },
+          "testimonial_UwkTDH": {
+            "type": "testimonial",
+            "settings": {
+              "rating": 5,
+              "text": "Great products and excellent service!",
+              "author": "John Doe",
+              "location": "Truckee, CA",
+              "verified": true
+            }
+          },
+          "testimonial_L4cLnm": {
+            "type": "testimonial",
+            "settings": {
+              "rating": 5,
+              "text": "Great products and excellent service!",
+              "author": "John Doe",
+              "location": "Truckee, CA",
+              "verified": true
+            }
+          }
+        },
+        "block_order": [
+          "testimonial_QWcDQc",
+          "testimonial_UwkTDH",
+          "testimonial_L4cLnm"
+        ],
         "settings": {
           "heading": "What Our Customers Say"
         }
@@ -101,12 +178,48 @@
       "blog-posts": {
         "type": "blog-posts",
         "settings": {
-          "blog": "",
+          "blog": "news",
           "posts_to_show": 3
         }
       },
       "instagram-feed": {
         "type": "instagram-feed",
+        "blocks": {
+          "image_4pAw9p": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/photo-1598300042247-d088f8ab3a91.jpg",
+              "link": ""
+            }
+          },
+          "image_gJ3zqh": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/photo-1598300042247-d088f8ab3a91.jpg",
+              "link": ""
+            }
+          },
+          "image_wfEM9N": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/photo-1598300042247-d088f8ab3a91.jpg",
+              "link": ""
+            }
+          },
+          "image_C7DUWG": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/photo-1598300042247-d088f8ab3a91.jpg",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "image_4pAw9p",
+          "image_gJ3zqh",
+          "image_wfEM9N",
+          "image_C7DUWG"
+        ],
         "settings": {
           "heading": "Follow Us on Instagram",
           "instagram_handle": "@cahwy89",
