@@ -169,12 +169,12 @@
             "price": "$60.00",
             "show_sizes": true,
             "button_text": "Shop Hoodies",
-            "button_link": "",
+            "button_link": "#",
             "button_style": "primary",
-            "list_item_1": "",
-            "list_item_2": "",
-            "list_item_3": "",
-            "list_item_4": ""
+            "list_item_1": "List Item 1",
+            "list_item_2": "List Item 2",
+            "list_item_3": "List Item 3",
+            "list_item_4": "List Item 4"
           }
         }
       },
