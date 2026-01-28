@@ -15,6 +15,9 @@
     // Initialize sticky header
     initStickyHeader();
     
+    // Add scroll content padding if header is sticky
+    initScrollContentPadding();
+    
     // Initialize mobile menu
     initMobileMenu();
     
@@ -42,6 +45,19 @@
       
       lastScroll = currentScroll;
     });
+  }
+
+  // Add scroll content padding when header is sticky/fixed
+  function initScrollContentPadding() {
+    const headerContainer = document.querySelector('.header-container');
+    const mainContent = document.querySelector('#MainContent');
+    
+    if (headerContainer && mainContent) {
+      // Check if header has the header-sticky class
+      if (headerContainer.classList.contains('header-sticky')) {
+        mainContent.classList.add('scrol-content');
+      }
+    }
   }
 
   // Mobile Menu
