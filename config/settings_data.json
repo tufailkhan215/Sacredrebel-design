@@ -225,6 +225,28 @@
           "instagram_handle": "@cahwy89",
           "instagram_url": ""
         }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "promo_text": "Free shipping on orders over $75 | Shop our 3 locations in Truckee & Tahoe City",
+          "logo": "shopify://shop_images/klogo.jpg",
+          "logo_text": "",
+          "logo_subtitle": "",
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "newsletter_heading": "Join the 89 Community",
+          "newsletter_description": "Get the scoop on new arrivals, special promos and sales.",
+          "company_description": "So much more than a Sierra Highway, it's a way of life! Apparel and lifestyle goods for modern mountain living.",
+          "shop_menu": "",
+          "company_menu": "",
+          "instagram_url": "",
+          "facebook_url": ""
+        }
       }
     },
     "content_for_index": []
