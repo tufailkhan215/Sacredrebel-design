@@ -372,7 +372,7 @@
         "heading": "CA89 Blog",
         "blog": "news",
         "posts_to_show": 3,
-        "view_all_link": ""
+        "view_all_link": "shopify://blogs/news"
       }
     },
     "instagram-feed": {
