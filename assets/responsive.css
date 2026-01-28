@@ -242,29 +242,7 @@
     font-size: 3rem; /* md:text-3xl */
   }
 
-  .feature-showcase-block {
-    flex-direction: row;
-  }
-
-  .feature-showcase-block-reverse {
-    flex-direction: row-reverse;
-  }
-
-  .feature-showcase-image-wrapper {
-    width: 50%; /* lg:w-1/2 */
-  }
-
-  .feature-showcase-content {
-    width: 50%; /* lg:w-1/2 */
-  }
-
-  .feature-showcase-heading {
-    font-size: 4.4rem; /* md:text-5xl */
-  }
-
-  .feature-showcase-container {
-    padding: 0 2.4rem; /* sm:px-6 */
-  }
+  /* Feature showcase stays stacked on small tablets; desktop layout handled at 1024px+ */
 
   .customer-testimonials-grid {
     grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
@@ -380,6 +358,25 @@
 
   .feature-showcase-container {
     padding: 0 3.2rem; /* lg:px-8 */
+  }
+
+  /* Feature Showcase - match source: lg:flex-row / lg:flex-row-reverse */
+  .feature-showcase-block {
+    flex-direction: row; /* lg:flex-row */
+    align-items: center;
+    gap: 4.8rem; /* gap-12 */
+  }
+
+  .feature-showcase-block-reverse {
+    flex-direction: row-reverse; /* lg:flex-row-reverse */
+  }
+
+  .feature-showcase-image-wrapper {
+    width: 50%; /* lg:w-1/2 */
+  }
+
+  .feature-showcase-content {
+    width: 50%; /* lg:w-1/2 */
   }
 
   .feature-showcase-thumbnail {
