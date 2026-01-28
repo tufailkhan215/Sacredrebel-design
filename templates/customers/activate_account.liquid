@@ -1,0 +1,45 @@
+{% comment %}
+  Customer Activate Account Template
+{% endcomment %}
+
+<div class="customer-activate-account-page">
+  <div class="customer-activate-account-container">
+    <div class="customer-activate-account-wrapper">
+      <h1 class="customer-page-title">Activate Account</h1>
+      
+      {% form 'activate_customer_password', class: 'customer-form' %}
+        {{ form.errors | default_errors }}
+        
+        <div class="form-group">
+          <label for="CustomerPassword" class="form-label">Password</label>
+          <input 
+            type="password" 
+            name="customer[password]" 
+            id="CustomerPassword"
+            class="form-input"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="CustomerPasswordConfirmation" class="form-label">Confirm Password</label>
+          <input 
+            type="password" 
+            name="customer[password_confirmation]" 
+            id="CustomerPasswordConfirmation"
+            class="form-input"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-full">Activate Account</button>
+        
+        <div class="customer-form-links">
+          <button type="submit" name="decline" class="btn btn-outline btn-full">Decline Invitation</button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</div>

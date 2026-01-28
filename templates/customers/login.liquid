@@ -1,0 +1,53 @@
+{% comment %}
+  Customer Login Template
+{% endcomment %}
+
+<div class="customer-login-page">
+  <div class="customer-login-container">
+    <div class="customer-login-wrapper">
+      <h1 class="customer-page-title">Login</h1>
+      
+      {% form 'customer_login', class: 'customer-form' %}
+        {{ form.errors | default_errors }}
+        
+        <div class="form-group">
+          <label for="CustomerEmail" class="form-label">Email</label>
+          <input 
+            type="email" 
+            name="customer[email]" 
+            id="CustomerEmail"
+            class="form-input"
+            autocomplete="email"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="CustomerPassword" class="form-label">Password</label>
+          <input 
+            type="password" 
+            name="customer[password]" 
+            id="CustomerPassword"
+            class="form-input"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+        
+        <div class="form-group form-group-checkbox">
+          <label for="RememberMe" class="form-checkbox-label">
+            <input type="checkbox" name="remember_me" id="RememberMe" class="form-checkbox">
+            <span>Remember me</span>
+          </label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+        
+        <div class="customer-form-links">
+          <a href="{{ routes.account_register_url }}" class="customer-link">Create Account</a>
+          <a href="{{ routes.account_recover_url }}" class="customer-link">Forgot Password?</a>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</div>

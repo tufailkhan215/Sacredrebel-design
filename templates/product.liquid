@@ -1,0 +1,255 @@
+{% comment %}
+  Product Detail Template
+  Shows product details, images, variants, and add to cart
+{% endcomment %}
+
+<div class="product-page">
+  <div class="product-container">
+    <div class="product-images">
+      <div class="product-main-image">
+        {%- if product.featured_image != blank -%}
+          <img 
+            src="{{ product.featured_image | image_url: width: 1200 }}" 
+            alt="{{ product.featured_image.alt | escape }}"
+            id="ProductImage"
+            class="product-featured-image"
+            loading="eager"
+          >
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+      
+      {%- if product.images.size > 1 -%}
+        <div class="product-thumbnails">
+          {%- for image in product.images -%}
+            <button 
+              class="product-thumbnail{% if forloop.first %} active{% endif %}"
+              data-image-id="{{ image.id }}"
+              aria-label="View {{ image.alt | escape }}"
+            >
+              <img 
+                src="{{ image | image_url: width: 200 }}" 
+                alt="{{ image.alt | escape }}"
+                loading="lazy"
+              >
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="product-details">
+      {%- if product.vendor != blank -%}
+        <p class="product-vendor">{{ product.vendor }}</p>
+      {%- endif -%}
+      
+      <h1 class="product-title">{{ product.title }}</h1>
+      
+      <div class="product-price-wrapper">
+        <span class="product-price" id="ProductPrice">
+          {{ product.selected_or_first_available_variant.price | money }}
+        </span>
+        {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+          <span class="product-compare-price" id="ComparePrice">
+            {{ product.selected_or_first_available_variant.compare_at_price | money }}
+          </span>
+          <span class="product-sale-badge">Sale</span>
+        {%- endif -%}
+      </div>
+
+      {%- if product.description != blank -%}
+        <div class="product-description">
+          {{ product.description }}
+        </div>
+      {%- endif -%}
+
+      <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" id="ProductForm">
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" id="ProductVariantId">
+        
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <div class="product-option">
+              <label for="Option{{ forloop.index }}" class="product-option-label">
+                {{ option.name }}
+              </label>
+              <select 
+                name="options[{{ option.name | escape }}]"
+                id="Option{{ forloop.index }}"
+                class="product-option-select"
+                data-option-index="{{ forloop.index0 }}"
+              >
+                {%- for value in option.values -%}
+                  <option value="{{ value | escape }}"{% if option.selected_value == value %} selected{% endif %}>
+                    {{ value }}
+                  </option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        <div class="product-quantity">
+          <label for="Quantity" class="product-quantity-label">Quantity</label>
+          <div class="quantity-selector">
+            <button type="button" class="quantity-btn quantity-minus" aria-label="Decrease quantity">−</button>
+            <input 
+              type="number" 
+              id="Quantity" 
+              name="quantity" 
+              value="1" 
+              min="1" 
+              class="quantity-input"
+            >
+            <button type="button" class="quantity-btn quantity-plus" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <button 
+          type="submit" 
+          name="add" 
+          id="AddToCart"
+          class="btn btn-primary product-add-to-cart-btn"
+          {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+        >
+          {%- if product.selected_or_first_available_variant.available -%}
+            Add to Cart
+          {%- else -%}
+            Sold Out
+          {%- endif -%}
+        </button>
+      </form>
+
+      {%- if product.metafields.custom.product_details != blank -%}
+        <div class="product-metafields">
+          {{ product.metafields.custom.product_details }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if product.images.size > 0 or product.description != blank -%}
+    <div class="product-additional-info">
+      {%- if product.description != blank -%}
+        <div class="product-tabs">
+          <button class="product-tab active" data-tab="description">Description</button>
+          {%- if product.metafields.custom.shipping_info != blank -%}
+            <button class="product-tab" data-tab="shipping">Shipping</button>
+          {%- endif -%}
+          {%- if product.metafields.custom.care_instructions != blank -%}
+            <button class="product-tab" data-tab="care">Care</button>
+          {%- endif -%}
+        </div>
+        
+        <div class="product-tab-content active" id="tab-description">
+          {{ product.description }}
+        </div>
+        
+        {%- if product.metafields.custom.shipping_info != blank -%}
+          <div class="product-tab-content" id="tab-shipping">
+            {{ product.metafields.custom.shipping_info }}
+          </div>
+        {%- endif -%}
+        
+        {%- if product.metafields.custom.care_instructions != blank -%}
+          <div class="product-tab-content" id="tab-care">
+            {{ product.metafields.custom.care_instructions }}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  // Product variant selection
+  document.addEventListener('DOMContentLoaded', function() {
+    const variantSelects = document.querySelectorAll('.product-option-select');
+    const productForm = document.getElementById('ProductForm');
+    const productPrice = document.getElementById('ProductPrice');
+    const comparePrice = document.getElementById('ComparePrice');
+    const variantIdInput = document.getElementById('ProductVariantId');
+    const addToCartBtn = document.getElementById('AddToCart');
+    
+    const variants = {{ product.variants | json }};
+    
+    function updateVariant() {
+      const selectedOptions = Array.from(variantSelects).map(select => select.value);
+      const selectedVariant = variants.find(variant => {
+        return variant.options.every((option, index) => option === selectedOptions[index]);
+      });
+      
+      if (selectedVariant) {
+        variantIdInput.value = selectedVariant.id;
+        productPrice.textContent = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD'
+        }).format(selectedVariant.price / 100);
+        
+        if (selectedVariant.compare_at_price > selectedVariant.price) {
+          comparePrice.textContent = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          }).format(selectedVariant.compare_at_price / 100);
+          comparePrice.style.display = 'inline';
+        } else {
+          comparePrice.style.display = 'none';
+        }
+        
+        addToCartBtn.disabled = !selectedVariant.available;
+        addToCartBtn.textContent = selectedVariant.available ? 'Add to Cart' : 'Sold Out';
+      }
+    }
+    
+    variantSelects.forEach(select => {
+      select.addEventListener('change', updateVariant);
+    });
+    
+    // Product image switching
+    const thumbnails = document.querySelectorAll('.product-thumbnail');
+    const mainImage = document.getElementById('ProductImage');
+    
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+        const imageSrc = this.querySelector('img').src.replace('_200x200', '_1200x1200');
+        mainImage.src = imageSrc;
+        
+        thumbnails.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
+    // Quantity selector
+    const quantityInput = document.getElementById('Quantity');
+    const quantityMinus = document.querySelector('.quantity-minus');
+    const quantityPlus = document.querySelector('.quantity-plus');
+    
+    quantityMinus.addEventListener('click', function() {
+      const currentValue = parseInt(quantityInput.value);
+      if (currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+      }
+    });
+    
+    quantityPlus.addEventListener('click', function() {
+      const currentValue = parseInt(quantityInput.value);
+      quantityInput.value = currentValue + 1;
+    });
+    
+    // Product tabs
+    const tabs = document.querySelectorAll('.product-tab');
+    const tabContents = document.querySelectorAll('.product-tab-content');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetTab = this.dataset.tab;
+        
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        this.classList.add('active');
+        document.getElementById('tab-' + targetTab).classList.add('active');
+      });
+    });
+  });
+</script>

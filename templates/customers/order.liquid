@@ -1,0 +1,98 @@
+{% comment %}
+  Customer Order Detail Template
+{% endcomment %}
+
+<div class="customer-order-page">
+  <div class="customer-order-container">
+    <div class="order-header">
+      <h1 class="customer-page-title">Order {{ order.name }}</h1>
+      <a href="{{ routes.account_url }}" class="btn btn-outline">Back to Orders</a>
+    </div>
+    
+    <div class="order-info-grid">
+      <div class="order-section">
+        <h2 class="order-section-title">Order Details</h2>
+        <div class="order-details">
+          <p><strong>Order Date:</strong> {{ order.created_at | date: '%B %d, %Y' }}</p>
+          <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+          <p><strong>Payment Status:</strong> <span class="order-status order-status-{{ order.financial_status }}">{{ order.financial_status_label }}</span></p>
+          <p><strong>Fulfillment Status:</strong> <span class="order-status order-status-{{ order.fulfillment_status }}">{{ order.fulfillment_status_label }}</span></p>
+        </div>
+      </div>
+      
+      <div class="order-section">
+        <h2 class="order-section-title">Shipping Address</h2>
+        <div class="order-address">
+          {{ order.shipping_address | format_address }}
+        </div>
+      </div>
+      
+      <div class="order-section">
+        <h2 class="order-section-title">Billing Address</h2>
+        <div class="order-address">
+          {{ order.billing_address | format_address }}
+        </div>
+      </div>
+    </div>
+    
+    <div class="order-items-section">
+      <h2 class="order-section-title">Order Items</h2>
+      <table class="order-items-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for line_item in order.line_items %}
+            <tr>
+              <td>
+                <div class="order-item">
+                  {% if line_item.image %}
+                    <img src="{{ line_item.image | image_url: width: 100 }}" alt="{{ line_item.title }}" class="order-item-image">
+                  {% endif %}
+                  <div class="order-item-details">
+                    <a href="{{ line_item.product.url }}" class="order-item-title">{{ line_item.title }}</a>
+                    {% if line_item.variant.title != 'Default Title' %}
+                      <p class="order-item-variant">{{ line_item.variant.title }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </td>
+              <td>{{ line_item.sku }}</td>
+              <td>{{ line_item.price | money }}</td>
+              <td>{{ line_item.quantity }}</td>
+              <td>{{ line_item.line_price | money }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4"><strong>Subtotal</strong></td>
+            <td><strong>{{ order.subtotal_price | money }}</strong></td>
+          </tr>
+          {% if order.shipping_price > 0 %}
+            <tr>
+              <td colspan="4">Shipping</td>
+              <td>{{ order.shipping_price | money }}</td>
+            </tr>
+          {% endif %}
+          {% if order.tax_price > 0 %}
+            <tr>
+              <td colspan="4">Tax</td>
+              <td>{{ order.tax_price | money }}</td>
+            </tr>
+          {% endif %}
+          <tr class="order-total">
+            <td colspan="4"><strong>Total</strong></td>
+            <td><strong>{{ order.total_price | money }}</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+{% comment %}
+  Customer Registration Template
+{% endcomment %}
+
+<div class="customer-register-page">
+  <div class="customer-register-container">
+    <div class="customer-register-wrapper">
+      <h1 class="customer-page-title">Create Account</h1>
+      
+      {% form 'create_customer', class: 'customer-form' %}
+        {{ form.errors | default_errors }}
+        
+        <div class="form-group">
+          <label for="FirstName" class="form-label">First Name</label>
+          <input 
+            type="text" 
+            name="customer[first_name]" 
+            id="FirstName"
+            class="form-input"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="LastName" class="form-label">Last Name</label>
+          <input 
+            type="text" 
+            name="customer[last_name]" 
+            id="LastName"
+            class="form-input"
+            autocomplete="family-name"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="RegisterEmail" class="form-label">Email</label>
+          <input 
+            type="email" 
+            name="customer[email]" 
+            id="RegisterEmail"
+            class="form-input"
+            autocomplete="email"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="RegisterPassword" class="form-label">Password</label>
+          <input 
+            type="password" 
+            name="customer[password]" 
+            id="RegisterPassword"
+            class="form-input"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        
+        <div class="customer-form-links">
+          <a href="{{ routes.account_login_url }}" class="customer-link">Already have an account? Sign in</a>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</div>

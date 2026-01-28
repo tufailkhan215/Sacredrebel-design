@@ -491,6 +491,32 @@
   .page-title {
     font-size: 4.8rem;
   }
+
+  .blog-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-addresses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-posts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .customer-addresses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

@@ -1,0 +1,74 @@
+{% comment %}
+  Blog Article Detail Template
+  Shows individual blog article with full content
+{% endcomment %}
+
+<article class="article-page">
+  <div class="article-container">
+    {%- if article.image != blank -%}
+      <div class="article-image-wrapper">
+        <img 
+          src="{{ article.image | image_url: width: 1200 }}" 
+          alt="{{ article.image.alt | escape }}"
+          class="article-featured-image"
+          loading="eager"
+        >
+      </div>
+    {%- endif -%}
+
+    <header class="article-header">
+      {%- if article.tags.size > 0 -%}
+        <div class="article-tags">
+          {%- for tag in article.tags -%}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="article-tag">{{ tag }}</a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      
+      <h1 class="article-title">{{ article.title }}</h1>
+      
+      <div class="article-meta">
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" class="article-date">
+          {{ article.published_at | date: '%B %d, %Y' }}
+        </time>
+        {%- if article.author != blank -%}
+          <span class="article-author">by {{ article.author }}</span>
+        {%- endif -%}
+      </div>
+    </header>
+
+    <div class="article-content">
+      {{ article.content }}
+    </div>
+
+    {%- if article.tags.size > 0 -%}
+      <footer class="article-footer">
+        <div class="article-tags-section">
+          <span class="article-tags-label">Tags:</span>
+          {%- for tag in article.tags -%}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="article-tag-link">{{ tag }}</a>
+            {%- unless forloop.last -%}, {%- endunless -%}
+          {%- endfor -%}
+        </div>
+      </footer>
+    {%- endif -%}
+
+    <nav class="article-navigation">
+      {%- if blog.previous_article -%}
+        <a href="{{ blog.previous_article.url }}" class="article-nav-link article-nav-prev">
+          ← Previous Article
+        </a>
+      {%- endif -%}
+      
+      <a href="{{ blog.url }}" class="article-nav-link article-nav-back">
+        Back to Blog
+      </a>
+      
+      {%- if blog.next_article -%}
+        <a href="{{ blog.next_article.url }}" class="article-nav-link article-nav-next">
+          Next Article →
+        </a>
+      {%- endif -%}
+    </nav>
+  </div>
+</article>

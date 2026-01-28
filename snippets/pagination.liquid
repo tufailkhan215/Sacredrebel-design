@@ -1,0 +1,48 @@
+{% comment %}
+  Pagination Snippet
+  Renders pagination for collections and blogs
+{% endcomment %}
+
+{% if paginate.pages > 1 %}
+  <nav class="pagination" role="navigation" aria-label="Pagination">
+    <ul class="pagination-list">
+      {% if paginate.previous %}
+        <li class="pagination-item">
+          <a href="{{ paginate.previous.url }}" class="pagination-link pagination-link-prev" aria-label="Previous page">
+            ← Previous
+          </a>
+        </li>
+      {% endif %}
+      
+      {% for part in paginate.parts %}
+        {% if part.is_link %}
+          <li class="pagination-item">
+            <a href="{{ part.url }}" class="pagination-link">{{ part.title }}</a>
+          </li>
+        {% else %}
+          {% if part.title == paginate.current_page %}
+            <li class="pagination-item pagination-item-active">
+              <span class="pagination-link pagination-link-active" aria-current="page">{{ part.title }}</span>
+            </li>
+          {% else %}
+            <li class="pagination-item pagination-item-ellipsis">
+              <span class="pagination-link pagination-link-ellipsis">{{ part.title }}</span>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if paginate.next %}
+        <li class="pagination-item">
+          <a href="{{ paginate.next.url }}" class="pagination-link pagination-link-next" aria-label="Next page">
+            Next →
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+    
+    <div class="pagination-info">
+      Showing {{ paginate.current_offset | plus: 1 }}-{{ paginate.current_offset | plus: paginate.page_size }} of {{ paginate.items }} items
+    </div>
+  </nav>
+{% endif %}
