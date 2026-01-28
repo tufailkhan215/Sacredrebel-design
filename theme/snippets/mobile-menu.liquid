@@ -1,0 +1,17 @@
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="mobile-menu-header">
+    <h3>Menu</h3>
+    <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul class="mobile-menu-nav">
+    {%- for link in linklists[menu].links -%}
+      <li>
+        <a href="{{ link.url }}">{{ link.title | upcase }}</a>
+      </li>
+    {%- endfor -%}
+    <li>
+      <a href="{{ routes.account_login_url }}">My Account</a>
+    </li>
+  </ul>
+</div>

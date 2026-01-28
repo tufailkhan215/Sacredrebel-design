@@ -1,0 +1,18 @@
+<div class="filter-sidebar">
+  <div class="filter-header">
+    <h3>Filters</h3>
+    <button class="filter-clear">Clear All</button>
+  </div>
+
+  <div class="filter-group">
+    <h4 class="filter-group-title">Category</h4>
+    {%- for collection in collections -%}
+      {%- unless collection.handle == 'all' or collection.handle == 'frontpage' -%}
+        <label class="filter-checkbox">
+          <input type="checkbox" value="{{ collection.handle }}" class="collection-filter">
+          <span>{{ collection.title }}</span>
+        </label>
+      {%- endunless -%}
+    {%- endfor -%}
+  </div>
+</div>

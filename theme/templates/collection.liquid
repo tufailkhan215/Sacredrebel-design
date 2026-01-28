@@ -1,0 +1,119 @@
+{% comment %}
+  Collection Template
+{% endcomment %}
+
+{% section 'collection-banner' %}
+{% section 'collection-filters' %}
+
+<div class="container">
+  <div class="collection-content">
+    <aside class="filter-sidebar">
+      {%- render 'filter-sidebar' -%}
+    </aside>
+
+    <main class="collection-products">
+      <div class="collection-toolbar">
+        <div class="collection-toolbar-left">
+          <button class="filter-toggle btn btn-outline">
+            Filters
+            <span class="product-count">{{ collection.products_count }} products</span>
+          </button>
+        </div>
+        <div class="collection-toolbar-right">
+          <select class="sort-select">
+            <option value="manual">Featured</option>
+            <option value="price-ascending">Price: Low to High</option>
+            <option value="price-descending">Price: High to Low</option>
+            <option value="title-ascending">Alphabetically: A-Z</option>
+            <option value="title-descending">Alphabetically: Z-A</option>
+            <option value="created-descending">Newest</option>
+            <option value="best-selling">Best Selling</option>
+          </select>
+          <div class="view-toggle-group">
+            <button class="view-toggle active" data-view="grid" aria-label="Grid view">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </button>
+            <button class="view-toggle" data-view="list" aria-label="List view">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        {%- for product in collection.products -%}
+          {%- render 'product-card', product: product -%}
+        {%- else -%}
+          <p>No products found in this collection.</p>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        {%- render 'pagination', paginate: paginate -%}
+      {%- endif -%}
+    </main>
+  </div>
+</div>
+
+{% paginate collection.products by 12 %}
+  {%- comment -%} Pagination handled above {%- endcomment -%}
+{% endpaginate %}
+
+<style>
+.collection-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+
+.collection-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.view-toggle-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.view-toggle {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.view-toggle.active {
+  background: var(--color-dark-gray);
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .collection-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-sidebar {
+    display: none;
+  }
+}
+</style>

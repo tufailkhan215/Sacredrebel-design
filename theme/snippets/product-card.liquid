@@ -1,0 +1,65 @@
+<div class="product-card">
+  {%- if product.featured_image -%}
+    <div class="product-image-wrapper">
+      <a href="{{ product.url }}">
+        <img 
+          src="{{ product.featured_image | image_url: width: 400 }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          class="product-image"
+          loading="lazy"
+        >
+      </a>
+      
+      {%- comment -%} Product Badge {%- endcomment -%}
+      {%- if product.tags contains 'best-seller' -%}
+        <span class="product-badge">Best Seller</span>
+      {%- elsif product.tags contains 'new' -%}
+        <span class="product-badge">New</span>
+      {%- elsif product.tags contains 'popular' -%}
+        <span class="product-badge">Popular</span>
+      {%- elsif product.compare_at_price > product.price -%}
+        <span class="product-badge">Sale</span>
+      {%- endif -%}
+
+      <div class="product-actions">
+        <button class="product-action-btn wishlist-btn" data-product-id="{{ product.id }}" aria-label="Add to wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+        <button class="product-action-btn quick-view-btn" data-handle="{{ product.handle }}" aria-label="Quick view">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+        <button class="product-action-btn add-to-cart-btn" data-variant-id="{{ product.selected_or_first_available_variant.id }}" aria-label="Add to cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="product-info">
+    {%- if product.collections.first -%}
+      <div class="product-category">{{ product.collections.first.title }}</div>
+    {%- endif -%}
+    
+    <h3 class="product-title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+    
+    <div class="product-price">
+      {%- if product.compare_at_price > product.price -%}
+        <span class="price-compare">{{ product.compare_at_price | money }}</span>
+        <span class="price-sale">{{ product.price | money }}</span>
+      {%- else -%}
+        {{ product.price | money }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+{% schema %}
+{
+  "name": "Blog Posts",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "posts_to_show",
+      "label": "Posts to show",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Posts"
+    }
+  ]
+}
+{% endschema %}
+
+{%- if section.settings.blog != blank -%}
+  <section class="section">
+    <div class="container">
+      <div class="blog-posts-grid">
+        {%- for article in blogs[section.settings.blog].articles limit: section.settings.posts_to_show -%}
+          <article class="blog-card">
+            {%- if article.image != blank -%}
+              <a href="{{ article.url }}">
+                <img src="{{ article.image | image_url: width: 600 }}" alt="{{ article.title }}" class="blog-card-image">
+              </a>
+            {%- endif -%}
+            <div class="blog-card-content">
+              <time class="blog-card-date">{{ article.published_at | date: "%b %d, %Y" }}</time>
+              <h3 class="blog-card-title">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+              </h3>
+              {%- if article.excerpt != blank -%}
+                <p class="blog-card-excerpt">{{ article.excerpt | strip_html | truncatewords: 20 }}</p>
+              {%- endif -%}
+              <a href="{{ article.url }}" class="blog-card-link">Read More →</a>
+            </div>
+          </article>
+        {%- endfor -%}
+      </div>
+      <div class="text-center mt-4">
+        <a href="{{ blogs[section.settings.blog].url }}" class="btn btn-outline">View All Posts</a>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+<style>
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.blog-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.blog-card-content {
+  padding: 2rem;
+}
+
+.blog-card-date {
+  font-size: 1.4rem;
+  color: var(--color-text-light);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.blog-card-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-card-excerpt {
+  color: var(--color-text-light);
+  margin-bottom: 1.6rem;
+}
+
+.blog-card-link {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+</style>

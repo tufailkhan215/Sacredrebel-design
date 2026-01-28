@@ -1,0 +1,118 @@
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading",
+      "default": "Join the 89 Community"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_description",
+      "label": "Newsletter Description",
+      "default": "Get the scoop on new arrivals, special promos and sales."
+    },
+    {
+      "type": "text",
+      "id": "company_description",
+      "label": "Company Description",
+      "default": "So much more than a Sierra Highway, it's a way of life! Apparel and lifestyle goods for modern mountain living."
+    },
+    {
+      "type": "link_list",
+      "id": "shop_menu",
+      "label": "Shop Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "company_menu",
+      "label": "Company Menu"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    }
+  ]
+}
+{% endschema %}
+
+<footer class="footer">
+  <div class="footer-top">
+    {%- if section.settings.newsletter_heading != blank -%}
+    <div class="footer-newsletter">
+      <h3>{{ section.settings.newsletter_heading }}</h3>
+      {%- if section.settings.newsletter_description != blank -%}
+        <p>{{ section.settings.newsletter_description }}</p>
+      {%- endif -%}
+      <form class="newsletter-form" action="{{ routes.cart_url }}" method="post">
+        <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Subscribe →</button>
+      </form>
+    </div>
+    {%- endif -%}
+
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>CALIFORNIA 89</h4>
+        <p>{{ section.settings.company_description }}</p>
+        <div class="social-icons">
+          {%- if section.settings.instagram_url != blank -%}
+            <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener">
+              <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.facebook_url != blank -%}
+            <a href="{{ section.settings.facebook_url }}" target="_blank" rel="noopener">
+              <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if linklists[section.settings.shop_menu].links.size > 0 -%}
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <ul>
+          {%- for link in linklists[section.settings.shop_menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
+
+      {%- if linklists[section.settings.company_menu].links.size > 0 -%}
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          {%- for link in linklists[section.settings.company_menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} California 89. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="/policies/privacy-policy">Privacy Policy</a>
+      <a href="/policies/terms-of-service">Terms of Service</a>
+      <a href="/policies/shipping-policy">Shipping & Returns</a>
+    </div>
+  </div>
+</footer>

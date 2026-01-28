@@ -1,0 +1,96 @@
+{% schema %}
+{
+  "name": "Feature Icons",
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "On orders over $75"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon Name",
+          "default": "truck"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Icons",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Free Shipping",
+            "description": "On orders over $75"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Made in CA89",
+            "description": "Locally sourced goods"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Easy Returns",
+            "description": "30-day guarantee"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Customer Support",
+            "description": "We're here to help"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="feature-icons">
+  {%- for block in section.blocks -%}
+    <div class="feature-icon" {{ block.shopify_attributes }}>
+      <div class="feature-icon-image">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          {%- case block.settings.icon -%}
+            {%- when 'truck' -%}
+              <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"></path>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            {%- when 'leaf' -%}
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+            {%- when 'return' -%}
+              <polyline points="9 10 4 15 9 20"></polyline>
+              <path d="M20 4v11a4 4 0 0 1-4 4H4"></path>
+            {%- when 'headset' -%}
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            {%- else -%}
+              <circle cx="12" cy="12" r="10"></circle>
+          {%- endcase -%}
+        </svg>
+      </div>
+      <h3 class="feature-icon-title">{{ block.settings.title }}</h3>
+      <p class="feature-icon-text">{{ block.settings.description }}</p>
+    </div>
+  {%- endfor -%}
+</div>
