@@ -19,10 +19,52 @@
           "default": "On orders over $75"
         },
         {
-          "type": "text",
+          "type": "select",
           "id": "icon",
-          "label": "Icon Name",
-          "default": "truck"
+          "label": "Icon",
+          "default": "truck",
+          "options": [
+            {
+              "value": "truck",
+              "label": "Truck (Shipping)"
+            },
+            {
+              "value": "shield",
+              "label": "Shield (Security)"
+            },
+            {
+              "value": "return",
+              "label": "Return Arrow (Returns)"
+            },
+            {
+              "value": "headset",
+              "label": "Headphones (Support)"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf (Eco-friendly)"
+            },
+            {
+              "value": "heart",
+              "label": "Heart (Favorites)"
+            },
+            {
+              "value": "star",
+              "label": "Star (Quality)"
+            },
+            {
+              "value": "gift",
+              "label": "Gift (Gifts)"
+            },
+            {
+              "value": "clock",
+              "label": "Clock (Time)"
+            },
+            {
+              "value": "check",
+              "label": "Check (Verified)"
+            }
+          ]
         }
       ]
     }
@@ -35,7 +77,8 @@
           "type": "feature",
           "settings": {
             "title": "Free Shipping",
-            "description": "On orders over $75"
+            "description": "On orders over $75",
+            "icon": "truck"
           }
         },
         {
@@ -73,7 +116,8 @@
     <div class="feature-icon" {{ block.shopify_attributes }}>
       <div class="feature-icon-image">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          {%- case block.settings.icon -%}
+          {%- assign icon_name = block.settings.icon | default: 'truck' -%}
+          {%- case icon_name -%}
             {%- when 'truck' -%}
               <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
               <path d="M15 18H9"></path>
@@ -82,13 +126,30 @@
               <circle cx="7" cy="18" r="2"></circle>
             {%- when 'shield' -%}
               <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-            {%- when 'return' or 'refresh' -%}
+            {%- when 'return' -%}
               <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
               <path d="M3 3v5h5"></path>
               <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
               <path d="M16 16h5v5"></path>
-            {%- when 'headset' or 'headphones' -%}
+            {%- when 'headset' -%}
               <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
+            {%- when 'leaf' -%}
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+            {%- when 'heart' -%}
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            {%- when 'star' -%}
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            {%- when 'gift' -%}
+              <rect x="3" y="8" width="18" height="4" rx="1"></rect>
+              <path d="M12 8v13"></path>
+              <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
+              <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
+            {%- when 'clock' -%}
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            {%- when 'check' -%}
+              <polyline points="20 6 9 17 4 12"></polyline>
             {%- else -%}
               <circle cx="12" cy="12" r="10"></circle>
           {%- endcase -%}
