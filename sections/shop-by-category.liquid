@@ -1,6 +1,26 @@
 {% schema %}
 {
   "name": "Shop by Category",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Explore"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "From cozy apparel to modern home decor, find everything you need for mountain living."
+    }
+  ],
   "blocks": [
     {
       "type": "category",
@@ -13,6 +33,12 @@
           "default": "Apparel"
         },
         {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Everyday apparel for mountain life"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
@@ -21,6 +47,13 @@
           "type": "url",
           "id": "link",
           "label": "Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "large_card",
+          "label": "Large card (spans 2 rows)",
+          "default": false,
+          "info": "Only the first card should be large"
         }
       ]
     }
@@ -32,25 +65,30 @@
         {
           "type": "category",
           "settings": {
-            "title": "Apparel"
+            "title": "Apparel",
+            "description": "Everyday apparel for mountain life",
+            "large_card": true
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Home Decor"
+            "title": "Home Decor",
+            "description": "Modern mountain living essentials"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Drinkware"
+            "title": "Drinkware",
+            "description": "Mugs, glasses & tumblers"
           }
         },
         {
           "type": "category",
           "settings": {
-            "title": "Kitchen & Bar"
+            "title": "Kitchen & Bar",
+            "description": "Serve in style"
           }
         }
       ]
@@ -59,18 +97,38 @@
 }
 {% endschema %}
 
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Shop by Category</h2>
-    <div class="category-grid">
+<section class="category-showcase-section">
+  <div class="category-showcase-container">
+    <div class="category-showcase-header">
+      {%- if section.settings.label != blank -%}
+        <span class="category-showcase-label">{{ section.settings.label }}</span>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="category-showcase-title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <p class="category-showcase-description">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+    <div class="category-showcase-grid">
       {%- for block in section.blocks -%}
-        <a href="{{ block.settings.link | default: '#' }}" class="category-card" {{ block.shopify_attributes }}>
+        <a href="{{ block.settings.link | default: '#' }}" class="category-showcase-card{% if block.settings.large_card %} category-showcase-card-large{% endif %}" {{ block.shopify_attributes }}>
           {%- if block.settings.image != blank -%}
-            <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title }}" class="category-card-image">
+            <div class="category-showcase-image" style="background-image: url('{{ block.settings.image | image_url: width: 1200 }}');"></div>
           {%- endif -%}
-          <div class="category-card-content">
-            <h3 class="category-card-title">{{ block.settings.title }}</h3>
-            <span class="btn btn-white">Shop Now</span>
+          <div class="category-showcase-overlay"></div>
+          <div class="category-showcase-content">
+            <h3 class="category-showcase-card-title">{{ block.settings.title }}</h3>
+            {%- if block.settings.description != blank -%}
+              <p class="category-showcase-card-description">{{ block.settings.description }}</p>
+            {%- endif -%}
+            <span class="category-showcase-cta">
+              Shop Now
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="category-showcase-arrow" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </span>
           </div>
         </a>
       {%- endfor -%}

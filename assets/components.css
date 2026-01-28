@@ -25,8 +25,8 @@
 }
 
 .feature-icon-image {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 6rem;
+  height: 6rem;
   margin: 0 auto 1.6rem;
   display: flex;
   align-items: center;
@@ -36,8 +36,8 @@
 }
 
 .feature-icon-image svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 3rem;
+  height: 3rem;
   color: #b45309; /* amber-700 */
   stroke: currentColor;
   fill: none;
@@ -55,47 +55,148 @@
   color: #78716c; /* stone-500 */
 }
 
-/* Category Cards */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 4rem 0;
+/* Category Showcase Section */
+.category-showcase-section {
+  padding: 8rem 0; /* py-20 */
 }
 
-.category-card {
+.category-showcase-container {
+  max-width: 1280px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1.6rem; /* px-4 */
+}
+
+.category-showcase-header {
+  text-align: center;
+  margin-bottom: 4.8rem; /* mb-12 */
+}
+
+.category-showcase-label {
+  display: block;
+  color: #b45309; /* amber-700 */
+  font-weight: 500;
+  letter-spacing: 0.05em; /* tracking-wider */
+  text-transform: uppercase;
+  font-size: 1.4rem; /* text-sm */
+  margin-bottom: 0.8rem; /* mt-2 */
+}
+
+.category-showcase-title {
+  font-size: 3.6rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  color: #292524; /* stone-800 */
+  margin-bottom: 1.6rem; /* mb-4 */
+  line-height: 1.1;
+}
+
+.category-showcase-description {
+  font-size: 1.6rem;
+  color: #78716c; /* stone-600 */
+  max-width: 672px; /* max-w-2xl */
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.category-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* grid-cols-1 */
+  gap: 2.4rem; /* gap-6 */
+}
+
+.category-showcase-card {
   position: relative;
-  height: 400px;
-  border-radius: var(--border-radius);
   overflow: hidden;
+  border-radius: 16px; /* rounded-2xl */
+  min-height: 240px;
+  display: block;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.category-card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition);
+.category-showcase-card-large {
+  min-height: 500px;
 }
 
-.category-card:hover .category-card-image {
-  transform: scale(1.1);
+.category-showcase-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 0.7s ease; /* duration-700 */
 }
 
-.category-card-content {
+.category-showcase-card:hover .category-showcase-image {
+  transform: scale(1.1); /* group-hover:scale-110 */
+}
+
+.category-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), transparent);
+  transition: background 0.3s ease; /* duration-300 */
+}
+
+.category-showcase-card:hover .category-showcase-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), transparent);
+}
+
+.category-showcase-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-  color: var(--color-white);
+  padding: 2.4rem; /* p-6 */
+  z-index: 10;
 }
 
-.category-card-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.category-showcase-card-title {
+  font-size: 2.4rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: var(--color-white);
+  margin-bottom: 0.8rem; /* mb-2 */
+  transform: translateY(0);
+  transition: transform 0.3s ease; /* duration-300 */
+}
+
+.category-showcase-card:hover .category-showcase-card-title {
+  transform: translateY(-4px); /* group-hover:translate-y-[-4px] */
+}
+
+.category-showcase-card-description {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.8); /* text-white/80 */
+  margin-bottom: 1.6rem; /* mb-4 */
+  transform: translateY(0);
+  transition: transform 0.3s ease 0.075s; /* delay-75 */
+}
+
+.category-showcase-card:hover .category-showcase-card-description {
+  transform: translateY(-4px); /* group-hover:translate-y-[-4px] */
+}
+
+.category-showcase-cta {
+  display: inline-flex;
+  align-items: center;
+  color: #fbbf24; /* amber-400 */
+  font-weight: 500; /* font-medium */
+  transition: color 0.3s ease;
+}
+
+.category-showcase-card:hover .category-showcase-cta {
+  color: #fcd34d; /* amber-300 */
+}
+
+.category-showcase-arrow {
+  width: 2rem; /* w-5 */
+  height: 2rem; /* h-5 */
+  margin-left: 0.8rem; /* ml-2 */
+  transform: translateX(0);
+  transition: transform 0.3s ease; /* duration-300 */
+}
+
+.category-showcase-card:hover .category-showcase-arrow {
+  transform: translateX(8px); /* group-hover:translate-x-2 */
 }
 
 /* Testimonials */

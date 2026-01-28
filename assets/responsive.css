@@ -97,8 +97,20 @@
     padding: 5rem 0;
   }
 
-  .category-grid {
-    grid-template-columns: 1fr;
+  .category-showcase-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .category-showcase-title {
+    font-size: 3.6rem;
+  }
+
+  .category-showcase-section {
+    padding: 5rem 0;
+  }
+
+  .category-showcase-content {
+    padding: 2.4rem;
   }
 
   .testimonials-grid {
@@ -196,8 +208,24 @@
     font-size: 4.4rem;
   }
 
-  .category-grid {
+  .category-showcase-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-showcase-title {
+    font-size: 4.4rem; /* md:text-5xl */
+  }
+
+  .category-showcase-container {
+    padding: 0 2.4rem; /* sm:px-6 */
+  }
+
+  .category-showcase-content {
+    padding: 3.2rem; /* md:p-8 */
+  }
+
+  .category-showcase-card-title {
+    font-size: 3rem; /* md:text-3xl */
   }
 
   .testimonials-grid {
@@ -252,6 +280,14 @@
 
   .featured-products-title {
     font-size: 4.8rem;
+  }
+
+  .category-showcase-container {
+    padding: 0 3.2rem; /* lg:px-8 */
+  }
+
+  .category-showcase-card-large {
+    grid-row: span 2; /* md:row-span-2 */
   }
 }
 
