@@ -1,0 +1,119 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "hero-slider": {
+        "type": "hero-slider",
+        "blocks": {
+          "slide_HTgbjc": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/photo-1463693396721-8ca0cfa2b3b5.jpg",
+              "heading": "Modern Mountain Living",
+              "subtitle": "Home decor & lifestyle goods for your mountain retreat",
+              "button_text": "Shop Now",
+              "button_link": ""
+            }
+          },
+          "slide_p9HpY4": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/photo-1634849662801-a00d83441092.jpg",
+              "heading": "Modern Mountain Living",
+              "subtitle": "Home decor & lifestyle goods for your mountain retreat",
+              "button_text": "Shop Now",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "slide_HTgbjc",
+          "slide_p9HpY4"
+        ],
+        "settings": {
+          "auto_play_delay": 5,
+          "show_dots": true,
+          "show_arrows": true
+        }
+      },
+      "feature-icons": {
+        "type": "feature-icons",
+        "blocks": {
+          "feature_mEeJda": {
+            "type": "feature",
+            "settings": {
+              "title": "Free Shipping",
+              "description": "On orders over $75",
+              "icon": "truck"
+            }
+          },
+          "feature_tDPVLi": {
+            "type": "feature",
+            "settings": {
+              "title": "Free Shipping",
+              "description": "On orders over $75",
+              "icon": "truck"
+            }
+          },
+          "feature_73geN8": {
+            "type": "feature",
+            "settings": {
+              "title": "Free Shipping",
+              "description": "On orders over $75",
+              "icon": "truck"
+            }
+          }
+        },
+        "block_order": [
+          "feature_mEeJda",
+          "feature_tDPVLi",
+          "feature_73geN8"
+        ],
+        "settings": {}
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "settings": {
+          "heading": "Featured Products",
+          "collection": "",
+          "products_to_show": 8,
+          "background_color": "#f5f5f5"
+        }
+      },
+      "shop-by-category": {
+        "type": "shop-by-category",
+        "settings": {}
+      },
+      "customer-testimonials": {
+        "type": "customer-testimonials",
+        "settings": {
+          "heading": "What Our Customers Say"
+        }
+      },
+      "blog-posts": {
+        "type": "blog-posts",
+        "settings": {
+          "blog": "",
+          "posts_to_show": 3
+        }
+      },
+      "instagram-feed": {
+        "type": "instagram-feed",
+        "settings": {
+          "heading": "Follow Us on Instagram",
+          "instagram_handle": "@cahwy89",
+          "instagram_url": ""
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}
